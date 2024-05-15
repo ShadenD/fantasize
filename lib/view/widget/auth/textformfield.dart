@@ -27,15 +27,13 @@ class textformfield extends StatelessWidget {
         borderRadius: BorderRadius.circular(14),
       ),
       child: TextFormField(
-        obscureText:
-            obscureText == null || obscureText == false ? false : true,
+        obscureText: obscureText == null || obscureText == false ? false : true,
         decoration: InputDecoration(
           contentPadding: const EdgeInsets.fromLTRB(20, 12, 100, 20),
           // fillColor: const Color(0x0A000000),
           enabledBorder: OutlineInputBorder(
             borderRadius: BorderRadius.circular(14),
-            borderSide:
-                const BorderSide(color: Color(0x0A000000), width: 0.0),
+            borderSide: const BorderSide(color: Color(0x0A000000), width: 0.0),
           ),
           border: OutlineInputBorder(
             borderSide: const BorderSide(color: Color(0x0A000000)),

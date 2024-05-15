@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names, must_be_immutable, avoid_print, unused_local_variable
+// ignore_for_file: camel_case_types, non_constant_identifier_names, must_be_immutable, avoid_print, unused_local_variable, file_names
 
 import 'package:fantasize/models/favorite_information.dart';
 import 'package:fantasize/view/widget/GridView.dart';

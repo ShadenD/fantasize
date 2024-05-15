@@ -83,101 +83,112 @@ class categoriesscreen extends StatelessWidget {
                 return Padding(
                   padding: const EdgeInsets.all(10),
                   child: Stack(children: [
-                    ExpansionTile(
-                      tilePadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
-                      expandedCrossAxisAlignment: CrossAxisAlignment.start,
-                      expandedAlignment: Alignment.bottomLeft,
-                      title: SizedBox(
-                        width: double.infinity,
-                        height: 200,
-                        child: Image.asset(
-                          category_data[index].imageUrl,
-                          width: 200,
-                          height: 200,
-                          fit: BoxFit.fitWidth,
+                    Theme(
+                      data: ThemeData(
+                        dividerColor: Colors.transparent,
+                        splashColor: Colors.transparent,
+                        highlightColor: Colors.transparent, // Hide the border
+                      ),
+                      child: Focus(
+                        canRequestFocus: false,
+                        child: ExpansionTile(
+                          tilePadding: const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                          expandedCrossAxisAlignment: CrossAxisAlignment.start,
+                          expandedAlignment: Alignment.bottomLeft,
+                          title: SizedBox(
+                            width: double.infinity,
+                            height: 200,
+                            child: Image.asset(
+                              category_data[index].imageUrl,
+                              width: 200,
+                              height: 200,
+                              fit: BoxFit.fitWidth,
+                            ),
+                          ),
+                          children: [
+                            Row(children: [
+                              const Text(
+                                '-',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                category_data[index].itemInfo[0],
+                                style: const TextStyle(
+                                  fontWeight: FontWeight.bold,
+                                ),
+                              )
+                            ]),
+                            Row(children: [
+                              const Text(
+                                '-',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(
+                                category_data[index].itemInfo[1],
+                                style: const TextStyle(
+                                    fontWeight: FontWeight.bold),
+                              )
+                            ]),
+                            Row(children: [
+                              const Text(
+                                '-',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(category_data[index].itemInfo[2],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold))
+                            ]),
+                            Row(children: [
+                              const Text(
+                                '-',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(category_data[index].itemInfo[3],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold))
+                            ]),
+                            Row(children: [
+                              const Text(
+                                '-',
+                                style: TextStyle(
+                                    color: Colors.red,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 20),
+                              ),
+                              const SizedBox(
+                                width: 5,
+                              ),
+                              Text(category_data[index].itemInfo[4],
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold))
+                            ]),
+                          ],
                         ),
                       ),
-                      children: [
-                        Row(children: [
-                          const Text(
-                            '-',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            category_data[index].itemInfo[0],
-                            style: const TextStyle(
-                              fontWeight: FontWeight.bold,
-                            ),
-                          )
-                        ]),
-                        Row(children: [
-                          const Text(
-                            '-',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(
-                            category_data[index].itemInfo[1],
-                            style: const TextStyle(fontWeight: FontWeight.bold),
-                          )
-                        ]),
-                        Row(children: [
-                          const Text(
-                            '-',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(category_data[index].itemInfo[2],
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold))
-                        ]),
-                        Row(children: [
-                          const Text(
-                            '-',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(category_data[index].itemInfo[3],
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold))
-                        ]),
-                        Row(children: [
-                          const Text(
-                            '-',
-                            style: TextStyle(
-                                color: Colors.red,
-                                fontWeight: FontWeight.bold,
-                                fontSize: 20),
-                          ),
-                          const SizedBox(
-                            width: 5,
-                          ),
-                          Text(category_data[index].itemInfo[4],
-                              style:
-                                  const TextStyle(fontWeight: FontWeight.bold))
-                        ]),
-                      ],
                     ),
                     Container(
                         margin: const EdgeInsets.fromLTRB(10, 20, 0, 0),

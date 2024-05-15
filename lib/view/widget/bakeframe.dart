@@ -6,18 +6,22 @@ class Frame extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-        // width: 68,
-        // height: 68,
-        margin: const EdgeInsets.fromLTRB(0, 20, 6, 0),
-        child: InkWell(
-            onTap: () {
-              Get.back();
-            },
+    return InkWell(
+      onTap: () {
+        Get.back();
+      },
+      child: ClipRRect(
+        child: Container(
+            // color: Colors.red,
+            width: MediaQuery.of(context).size.width * 0.8,
+            height: MediaQuery.of(context).size.height * 0.2,
+            margin: const EdgeInsets.fromLTRB(10, 10, 6, 0),
             child: Image.asset(
               'assets/images/Frame.png',
-              width: 68,
-              height: 68,
-            )));
+              width: MediaQuery.of(context).size.width * 0.5,
+              height: MediaQuery.of(context).size.height * 0.3,
+            )),
+      ),
+    );
   }
 }

@@ -21,6 +21,10 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+          dialogTheme: const DialogTheme(
+              backgroundColor: Color.fromARGB(
+                  255, 255, 255, 255) // Change the background color here
+              ),
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(headline1: const TextStyle(fontFamily: 'Poppins'))),

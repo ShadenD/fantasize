@@ -1,6 +1,7 @@
 // ignore_for_file: camel_case_types, sized_box_for_whitespace, must_be_immutable
 
 import 'package:fantasize/controller/home_controller.dart';
+import 'package:fantasize/core/middleware/constant/routes.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/categories.dart';
 import 'package:fantasize/view/widget/sale.dart';
@@ -46,11 +47,16 @@ class homescreen extends StatelessWidget {
                       child: const Logo()),
                   Container(
                     // color: Colors.red,
-                    margin: EdgeInsets.fromLTRB(10, 35, 20, 10),
-                    child: Image.asset(
-                      'assets/images/Profile.png',
-                      width: 40,
-                      height: 40,
+                    margin: const EdgeInsets.fromLTRB(10, 35, 20, 10),
+                    child: InkWell(
+                      onTap: () {
+                        Get.toNamed(AppRoute.Profile);
+                      },
+                      child: Image.asset(
+                        'assets/images/Profile.png',
+                        width: 40,
+                        height: 40,
+                      ),
                     ),
                   )
                 ],
@@ -121,7 +127,7 @@ class homescreen extends StatelessWidget {
                   ],
                 ),
               ),
-               sale(),
+              sale(),
             ],
           ),
         ),

@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, must_be_immutable
+// ignore_for_file: camel_case_types, must_be_immutable, non_constant_identifier_names
 
 import 'package:fantasize/core/middleware/constant/routes.dart';
 import 'package:fantasize/models/cart_info.dart';
@@ -12,7 +12,6 @@ import 'package:get/get.dart';
 class cart extends StatelessWidget {
   cart({super.key});
 
-  // ignore: non_constant_identifier_names
   List cart_data = [
     const cart_info(
         imagUrl1: 'assets/images/Image.png',
@@ -45,40 +44,37 @@ class cart extends StatelessWidget {
       body: Column(
         children: [
           Expanded(
-            child: Container(
+            child: SizedBox(
               height: MediaQuery.of(context).size.height * 0.7,
               child: SingleChildScrollView(
                 scrollDirection: Axis.vertical,
                 child: Column(
                   children: [
-                    Container(
-                      // color: Colors.red,
-                      child: ListView.separated(
-                          shrinkWrap: true,
-                          separatorBuilder: (BuildContext context, int index) {
-                            return SizedBox(
-                              height: 10,
-                              child: Container(
-                                margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
-                                child: Image.asset(
-                                  'assets/images/Line 2.png',
-                                  width: 100,
-                                  height: 0,
-                                ),
+                    ListView.separated(
+                        shrinkWrap: true,
+                        separatorBuilder: (BuildContext context, int index) {
+                          return SizedBox(
+                            height: 10,
+                            child: Container(
+                              margin: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+                              child: Image.asset(
+                                'assets/images/Line 2.png',
+                                width: 100,
+                                height: 0,
                               ),
-                            );
-                          },
-                          padding: const EdgeInsets.only(
-                              top: 10, bottom: 1, left: 1, right: 1),
-                          itemCount: 3,
-                          itemBuilder: (context, index) {
-                            return Cart(
-                              imageUrl: cart_data[index].imagUrl1,
-                              title: cart_data[index].title,
-                              price: cart_data[index].price,
-                            );
-                          }),
-                    ),
+                            ),
+                          );
+                        },
+                        padding: const EdgeInsets.only(
+                            top: 10, bottom: 1, left: 1, right: 1),
+                        itemCount: 3,
+                        itemBuilder: (context, index) {
+                          return Cart(
+                            imageUrl: cart_data[index].imagUrl1,
+                            title: cart_data[index].title,
+                            price: cart_data[index].price,
+                          );
+                        }),
                     Container(
                       // color: Colors.red,
                       width: 138,
@@ -324,7 +320,29 @@ class cart extends StatelessWidget {
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(14)),
                       padding: const EdgeInsets.symmetric(vertical: 13),
-                      onPressed: () {},
+                      onPressed: () {
+                        Get.snackbar('', '',
+                            snackPosition: SnackPosition.TOP,
+                            // backgroundColor: const Color.fromARGB(255, 194, 74, 83),
+                            maxWidth: 1200,
+                            colorText: Colors.white,
+                            titleText: const Text(
+                              'Your order has been successfully paid',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  fontSize: 25, color: Colors.white, height: 2),
+                            ),
+                            padding: const EdgeInsets.fromLTRB(60, 50, 60, 60),
+                            boxShadows: [
+                              BoxShadow(
+                                color: const Color.fromARGB(156, 224, 31, 50)
+                                    .withOpacity(0.5),
+                                spreadRadius: 8,
+                                blurRadius: 7,
+                                offset: const Offset(0, 0),
+                              ),
+                            ]);
+                      },
                       color: const Color.fromARGB(255, 252, 76, 92),
                       textColor: Colors.white,
                       child: Row(

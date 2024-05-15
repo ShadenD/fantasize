@@ -134,7 +134,7 @@ class edit_card extends StatelessWidget {
                                     color: Colors.red, // Border color
                                     width: 2.0, // Border width
                                   ),
-                                  value: this.value,
+                                  value: value,
                                   activeColor: Colors.red,
                                   onChanged: (value) {
                                     this.value = value!;
@@ -199,7 +199,9 @@ class edit_card extends StatelessWidget {
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(14)),
                             padding: const EdgeInsets.symmetric(vertical: 1),
-                            onPressed: () {},
+                            onPressed: () {
+                              Get.back();
+                            },
                             color: const Color.fromARGB(255, 252, 76, 92),
                             textColor: Colors.white,
                             child: const Text('Save',

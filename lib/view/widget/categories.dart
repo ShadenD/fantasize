@@ -1,4 +1,4 @@
-// ignore_for_file: unused_local_variable
+// ignore_for_file: unused_local_variable, use_super_parameters
 
 import 'package:fantasize/controller/home_controller.dart';
 import 'package:flutter/material.dart';

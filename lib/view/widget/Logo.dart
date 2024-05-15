@@ -11,11 +11,11 @@ class Logo extends StatelessWidget {
     return FadeInDown(
       child: Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
         Container(
-          margin: const EdgeInsets.fromLTRB(15, 20, 40, 15),
+          margin: const EdgeInsets.fromLTRB(10, 20, 50, 15),
           child: Image.asset(
             'assets/images/Group (1).png',
-            height: 40,
-            width: 40,
+            width: MediaQuery.of(context).size.width * 0.06,
+            height: MediaQuery.of(context).size.height * 0.09,
             alignment: Alignment.center,
           ),
         ),

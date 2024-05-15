@@ -41,7 +41,7 @@ class Cart extends StatelessWidget {
       ),
       leading: ClipRRect(
         borderRadius: BorderRadius.circular(14),
-        child: Container(
+        child: SizedBox(
           height: 90,
           child: Image.asset(
             imageUrl,
@@ -109,9 +109,7 @@ class Cart extends StatelessWidget {
                       ),
                     ),
                     GetBuilder<cart_controller>(
-                      builder: (controller) => Container(
-                        child: Text('${cartController.value}'),
-                      ),
+                      builder: (controller) => Text('${cartController.value}'),
                     ),
                     GetBuilder<cart_controller>(
                       builder: (controller) => Container(

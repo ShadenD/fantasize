@@ -5,6 +5,7 @@ import 'package:fantasize/view/widget/auth/custombuttonauth.dart';
 import 'package:fantasize/view/widget/bakeframe.dart';
 import 'package:fantasize/view/widget/textfield.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class edit_address extends StatelessWidget {
   const edit_address({super.key});
@@ -65,7 +66,9 @@ class edit_address extends StatelessWidget {
                   text: 'Save',
                   heigth: 47,
                   width: 206.18,
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.back();
+                  },
                 )
               ],
             ),
