@@ -1,23 +1,21 @@
 // ignore_for_file: unused_local_variable, use_super_parameters
 
 import 'package:fantasize/controller/home_controller.dart';
+import 'package:fantasize/models/department.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class Categories extends StatelessWidget {
-  final String imagePath;
+  final Department departments;
   final Color initialColor;
-  final double width;
-   final double height;
-
+  final VoidCallback onPressed;
 
   const Categories({
     Key? key,
     required this.initialColor,
-    required this.imagePath,
-    required this.width,
-    required this.height,
-    
+    required this.departments,
+    required this.onPressed,
+  
   }) : super(key: key);
 
   @override
@@ -26,11 +24,11 @@ class Categories extends StatelessWidget {
 
     return GetBuilder<home_controller>(
       builder: (controller) => GestureDetector(
-        onTap: () => controller.changeColor(),
+        onTap: onPressed,
         child: Image.asset(
-          imagePath,
-          width: width,
-          height: height,
+          departments.imageUrl,
+          width: departments.width,
+          height: departments.height,
           color: initialColor,
         ),
       ),

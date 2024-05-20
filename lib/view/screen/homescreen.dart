@@ -1,7 +1,8 @@
-// ignore_for_file: camel_case_types, sized_box_for_whitespace, must_be_immutable
+// ignore_for_file: camel_case_types, sized_box_for_whitespace, must_be_immutable, unused_local_variable, unrelated_type_equality_checks
 
 import 'package:fantasize/controller/home_controller.dart';
 import 'package:fantasize/core/middleware/constant/routes.dart';
+import 'package:fantasize/models/department.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/categories.dart';
 import 'package:fantasize/view/widget/sale.dart';
@@ -82,48 +83,25 @@ class homescreen extends StatelessWidget {
                 scrollDirection: Axis.horizontal,
                 child: Row(
                   children: [
-                    Categories(
-                        imagePath: 'assets/images/All Item.png',
-                        initialColor: homeController.click
-                            ? const Color.fromARGB(255, 252, 76, 92)
-                            : Colors.black,
-                        width: 130,
-                        height: 80),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Categories(
-                        imagePath: 'assets/images/Dress.png',
-                        initialColor: homeController.click
-                            ? const Color.fromARGB(255, 252, 76, 92)
-                            : Colors.black,
-                        width: 95,
-                        height: 60),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    GetBuilder<home_controller>(
-                      builder: (controller) => GestureDetector(
-                        onTap: () {
-                          controller.changeColor();
-                        },
-                        child: Image.asset(
-                          'assets/images/Hat.png',
-                          width: 95,
-                          height: 60,
-                        ),
+                    for (var dep in departments)
+                      Row(
+                        children: [
+                          Obx(
+                            () => Categories(
+                              initialColor: homeController.image == dep.imageUrl
+                                  ? const Color.fromARGB(255, 252, 76, 92)
+                                  : Colors.black,
+                              onPressed: () {
+                                homeController.changeColor(dep);
+                              },
+                              departments: dep,
+                            ),
+                          ),
+                          const SizedBox(
+                            width: 10,
+                          ),
+                        ],
                       ),
-                    ),
-                    const SizedBox(
-                      width: 10,
-                    ),
-                    Categories(
-                        imagePath: 'assets/images/Watch.png',
-                        initialColor: homeController.click
-                            ? const Color.fromARGB(255, 252, 76, 92)
-                            : Colors.black,
-                        width: 100,
-                        height: 60),
                   ],
                 ),
               ),
@@ -135,3 +113,11 @@ class homescreen extends StatelessWidget {
     );
   }
 }
+
+List<Department> departments = [
+  const Department(
+      imageUrl: 'assets/images/All Item.png', width: 120, height: 80),
+  const Department(imageUrl: 'assets/images/Dress.png', width: 80, height: 60),
+  const Department(imageUrl: 'assets/images/Hat.png', width: 95, height: 60),
+  const Department(imageUrl: 'assets/images/Watch.png', width: 100, height: 60),
+];

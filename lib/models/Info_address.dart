@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, avoid_types_as_parameter_names
+// ignore_for_file: camel_case_types, non_constant_identifier_names, prefer_typing_uninitialized_variables, avoid_types_as_parameter_names, file_names
 
 class address_infoo {
   final String info1;

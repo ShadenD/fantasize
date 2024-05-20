@@ -8,11 +8,13 @@ class info_textfeild extends StatelessWidget {
   final String title1;
   final String title2;
   final TextEditingController controller1;
+  final VoidCallback onPressed;
   const info_textfeild(
       {super.key,
       required this.title1,
       required this.title2,
-      required this.controller1});
+      required this.controller1,
+      required this.onPressed});
 
   @override
   Widget build(BuildContext context) {

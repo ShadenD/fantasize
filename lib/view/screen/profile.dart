@@ -1,4 +1,4 @@
-// ignore_for_file: use_key_in_widget_constructors, unused_element, non_constant_identifier_names, must_be_immutable, avoid_unnecessary_containers
+// ignore_for_file: use_key_in_widget_constructors, unused_element, non_constant_identifier_names, must_be_immutable, avoid_unnecessary_containers, prefer_const_declarations, prefer_typing_uninitialized_variables, avoid_print
 
 import 'package:fantasize/controller/profile_controller.dart';
 import 'package:fantasize/core/middleware/constant/routes.dart';
@@ -66,7 +66,7 @@ class Profile extends StatelessWidget {
                       borderRadius: BorderRadius.circular(59),
                       color: const Color.fromARGB(244, 245, 242, 242),
                     ),
-                    height: 975,
+                    height: 800,
                     width: 388,
                   ),
                   Column(
@@ -127,7 +127,7 @@ class Profile extends StatelessWidget {
                                                   ),
                                                   content:
                                                       SingleChildScrollView(
-                                                    child: Container(
+                                                    child: SizedBox(
                                                       width:
                                                           MediaQuery.of(context)
                                                                   .size
@@ -303,15 +303,185 @@ class Profile extends StatelessWidget {
                                     ),
                                   ),
                                   Container(
-                                    margin: const EdgeInsets.fromLTRB(
-                                        0, 10, 130, 0),
+                                    margin: EdgeInsets.fromLTRB(
+                                        0,
+                                        10,
+                                        MediaQuery.of(context).size.width *
+                                            0.01,
+                                        0),
                                     child: InkWell(
-                                      onTap: () {},
-                                      child: Container(
-                                        child: const Text(
-                                          'Language',
-                                          style: TextStyle(fontSize: 18),
-                                        ),
+                                      onTap: () {
+                                        showDialog<String>(
+                                            context: context,
+                                            builder:
+                                                (BuildContext context) =>
+                                                    GetBuilder<
+                                                        profile_controller>(
+                                                      builder: (controller) =>
+                                                          AlertDialog(
+                                                        backgroundColor:
+                                                            Colors.transparent,
+                                                        content: SizedBox(
+                                                          height: MediaQuery.of(
+                                                                      context)
+                                                                  .size
+                                                                  .height *
+                                                              0.1,
+                                                          child: Row(
+                                                            children: [
+                                                              Theme(
+                                                                data: ThemeData(
+                                                                  dividerColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                ),
+                                                                child: InkWell(
+                                                                  autofocus:
+                                                                      false,
+                                                                  onTap: () {
+                                                                    controller
+                                                                        .changeLanguageSelected();
+                                                                    controller
+                                                                        .selectedValue
+                                                                        .value = 'EN';
+                                                                  },
+                                                                  child:
+                                                                      Container(
+                                                                    height: 200,
+                                                                    width: 130,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: controller
+                                                                              .isSelected1
+                                                                              .value
+                                                                          ? const Color
+                                                                              .fromARGB(
+                                                                              255,
+                                                                              252,
+                                                                              76,
+                                                                              92)
+                                                                          : Colors
+                                                                              .white,
+                                                                      borderRadius:
+                                                                          const BorderRadius
+                                                                              .only(
+                                                                        topLeft:
+                                                                            Radius.circular(15),
+                                                                        bottomLeft:
+                                                                            Radius.circular(15),
+                                                                      ),
+                                                                    ),
+                                                                    child: Container(
+                                                                        width: 50,
+                                                                        height: 50,
+                                                                        // color: Colors
+                                                                        // .red,
+                                                                        margin: const EdgeInsets.fromLTRB(45, 25, 20, 20),
+                                                                        child: const Text(
+                                                                          'EN',
+                                                                          style:
+                                                                              TextStyle(fontSize: 25),
+                                                                        )),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                              SizedBox(
+                                                                width: MediaQuery.of(
+                                                                            context)
+                                                                        .size
+                                                                        .width *
+                                                                    0.009,
+                                                              ),
+                                                              Theme(
+                                                                data: ThemeData(
+                                                                  dividerColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  splashColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                  highlightColor:
+                                                                      Colors
+                                                                          .transparent,
+                                                                ),
+                                                                child: InkWell(
+                                                                  autofocus:
+                                                                      false,
+                                                                  onTap: () {
+                                                                    controller
+                                                                        .changeLanguageSelected();
+                                                                    controller
+                                                                        .selectedValue
+                                                                        .value = 'AR';
+                                                                  },
+                                                                  child:
+                                                                      Container(
+                                                                    height: 200,
+                                                                    width: 130,
+                                                                    decoration:
+                                                                        BoxDecoration(
+                                                                      color: controller
+                                                                              .isSelected2
+                                                                              .value
+                                                                          ? const Color
+                                                                              .fromARGB(
+                                                                              255,
+                                                                              252,
+                                                                              76,
+                                                                              92)
+                                                                          : Colors
+                                                                              .white,
+                                                                      borderRadius:
+                                                                          const BorderRadius
+                                                                              .only(
+                                                                        topRight:
+                                                                            Radius.circular(15),
+                                                                        bottomRight:
+                                                                            Radius.circular(15),
+                                                                      ),
+                                                                    ),
+                                                                    child: Container(
+                                                                        width: 50,
+                                                                        height: 50,
+                                                                        margin: const EdgeInsets.fromLTRB(45, 25, 20, 20),
+                                                                        child: const Text(
+                                                                          'AR',
+                                                                          style:
+                                                                              TextStyle(fontSize: 25),
+                                                                        )),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ],
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ));
+                                      },
+                                      child: Row(
+                                        children: [
+                                          const Text(
+                                            'Language',
+                                            style: TextStyle(fontSize: 18),
+                                          ),
+                                          GetBuilder<profile_controller>(
+                                            builder: (controller) => Container(
+                                              margin: const EdgeInsets.fromLTRB(
+                                                  150, 2, 0, 0),
+                                              child: InkWell(
+                                                autofocus: false,
+                                                child: Text(controller
+                                                    .selectedValue.value),
+                                              ),
+                                            ),
+                                          )
+                                        ],
                                       ),
                                     ),
                                   ),
@@ -321,6 +491,94 @@ class Profile extends StatelessWidget {
                           ),
                         ),
                       ),
+                      Container(
+                        margin: const EdgeInsets.fromLTRB(50, 20, 50, 0),
+                        child: Theme(
+                          data: ThemeData(
+                            dividerColor: Colors.transparent, // Hide the border
+                          ),
+                          child: ExpansionTile(
+                            tilePadding: EdgeInsets.zero,
+                            backgroundColor: Colors.transparent,
+                            collapsedBackgroundColor: Colors.transparent,
+                            childrenPadding: EdgeInsets.zero,
+                            initiallyExpanded: false,
+                            title: const Text(
+                              'Help and Support',
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
+                            ),
+                            children: [
+                              Column(
+                                children: [
+                                  Container(
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 2, 70, 5),
+                                    child: InkWell(
+                                      onTap: () {
+                                        Get.toNamed(AppRoute.User_info);
+                                      },
+                                      child: const Text(
+                                        'fantasize2024@gmail.com',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                  Container(
+                                    margin: EdgeInsets.fromLTRB(
+                                        0,
+                                        2,
+                                        MediaQuery.of(context).size.width *
+                                            0.34,
+                                        0),
+                                    child: InkWell(
+                                      onTap: () {
+                                        Get.toNamed(AppRoute.User_info);
+                                      },
+                                      child: const Text(
+                                        '+97259876488332',
+                                        style: TextStyle(fontSize: 18),
+                                      ),
+                                    ),
+                                  ),
+                                ],
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                      Row(
+                        children: [
+                          Container(
+                            margin: EdgeInsets.fromLTRB(
+                                MediaQuery.of(context).size.width * 0.6,
+                                MediaQuery.of(context).size.height * 0.12,
+                                MediaQuery.of(context).size.width * 0.07,
+                                MediaQuery.of(context).size.height * 0.2),
+                            alignment: Alignment.bottomRight,
+                            child: InkWell(
+                              onTap: () {},
+                              child: const Text(
+                                'Log Out',
+                                style: TextStyle(
+                                    fontWeight: FontWeight.bold, fontSize: 20),
+                              ),
+                            ),
+                          ),
+                          Container(
+                            // color: Colors.red,
+                            margin: EdgeInsets.fromLTRB(
+                                0,
+                                MediaQuery.of(context).size.height * 0.12,
+                                20,
+                                MediaQuery.of(context).size.height * 0.2),
+                            child: Image.asset('assets/images/Vector1.png',
+                                width: MediaQuery.of(context).size.width * 0.03,
+                                height:
+                                    MediaQuery.of(context).size.height * 0.02),
+                          ),
+                        ],
+                      )
                     ],
                   )
                 ]),

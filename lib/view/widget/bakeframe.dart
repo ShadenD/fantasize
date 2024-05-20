@@ -18,8 +18,8 @@ class Frame extends StatelessWidget {
             margin: const EdgeInsets.fromLTRB(10, 10, 6, 0),
             child: Image.asset(
               'assets/images/Frame.png',
-              width: MediaQuery.of(context).size.width * 0.5,
-              height: MediaQuery.of(context).size.height * 0.3,
+              width: MediaQuery.of(context).size.width * 0.8,
+              height: MediaQuery.of(context).size.height * 0.6,
             )),
       ),
     );

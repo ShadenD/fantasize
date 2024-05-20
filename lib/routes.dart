@@ -1,6 +1,7 @@
 import 'package:fantasize/core/middleware/constant/routes.dart';
 import 'package:fantasize/core/middleware/middleware.dart';
 import 'package:fantasize/view/screen/Favorites.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/flowersItem.dart';
 import 'package:fantasize/view/screen/SignUp.dart';
 import 'package:fantasize/view/screen/address_information.dart';
 import 'package:fantasize/view/screen/cart.dart';
@@ -34,4 +35,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.address_info, page: () => address_info()),
   GetPage(name: AppRoute.order_history, page: () => order_history()),
   GetPage(name: AppRoute.Payment_Method, page: () => Payment_Method()),
+  GetPage(name: AppRoute.flowers_Item, page: () => flowers_Item()),
 ];

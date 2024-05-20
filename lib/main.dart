@@ -2,7 +2,7 @@
 
 import 'package:fantasize/routes.dart';
 import 'package:fantasize/services/services.dart';
-import 'package:fantasize/view/widget/curve.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/flowersItem.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -28,7 +28,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(headline1: const TextStyle(fontFamily: 'Poppins'))),
-      home: curve(),
+      home:  flowers_Item(),
       getPages: routes,
     );
   }

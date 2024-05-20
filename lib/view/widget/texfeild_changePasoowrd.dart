@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types, file_names
+// ignore_for_file: camel_case_types, file_names, unnecessary_import
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
@@ -17,7 +17,7 @@ class texfeild_changePasoowrd extends StatelessWidget {
             // color: Colors
             //     .red,
             borderRadius: BorderRadius.circular(5)),
-        child:  TextField(
+        child: TextField(
           decoration: InputDecoration(
             hintText: title,
             hintStyle: const TextStyle(fontSize: 14),

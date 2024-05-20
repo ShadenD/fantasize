@@ -45,17 +45,17 @@ class User_info extends StatelessWidget {
               info_textfeild(
                 title1: 'User Name',
                 title2: 'Firas_khalayleh',
-                controller1: username,
+                controller1: username, onPressed: () {  },
               ),
               info_textfeild(
                 title1: 'Email Adress',
                 title2: 'fkmkh11@gmail.com',
-                controller1: eddressEmail,
+                controller1: eddressEmail, onPressed: () {  },
               ),
               info_textfeild(
                 title1: 'PhoneNumber',
                 title2: '0594386856',
-                controller1: phoneNumber,
+                controller1: phoneNumber, onPressed: () {  },
               ),
               Column(
                 children: [

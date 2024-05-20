@@ -22,5 +22,11 @@ class AppRoute {
   static const String address_info = "/address_info";
   static const String order_history = "/order_history";
     static const String Payment_Method = "/Payment_Method";
+        static const String PageItem = "/PageItem";
+                static const String ProductDetailsScreen = "/ProductDetailsScreen";
+                static const String TextFieldScreen = "/TextFieldScreen";
+                static const String flowers_Item = "/flowers_Item";
+
+
 
 }
