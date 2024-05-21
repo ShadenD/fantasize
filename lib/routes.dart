@@ -1,7 +1,9 @@
 import 'package:fantasize/core/middleware/constant/routes.dart';
 import 'package:fantasize/core/middleware/middleware.dart';
 import 'package:fantasize/view/screen/Favorites.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/cakeItem.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/flowersItem.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/ringItem.dart';
 import 'package:fantasize/view/screen/SignUp.dart';
 import 'package:fantasize/view/screen/address_information.dart';
 import 'package:fantasize/view/screen/cart.dart';
@@ -36,4 +38,6 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.order_history, page: () => order_history()),
   GetPage(name: AppRoute.Payment_Method, page: () => Payment_Method()),
   GetPage(name: AppRoute.flowers_Item, page: () => flowers_Item()),
+  GetPage(name: AppRoute.Rings_Item, page: () => Rings_Item()),
+  GetPage(name: AppRoute.Cake_Item, page: () => Cake_Item()),
 ];

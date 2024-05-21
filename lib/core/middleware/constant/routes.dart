@@ -26,6 +26,9 @@ class AppRoute {
                 static const String ProductDetailsScreen = "/ProductDetailsScreen";
                 static const String TextFieldScreen = "/TextFieldScreen";
                 static const String flowers_Item = "/flowers_Item";
+                                static const String Rings_Item = "/Rings_Item";
+
+                                static const String Cake_Item = "/Cake_Item";
 
 
 

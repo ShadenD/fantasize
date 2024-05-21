@@ -6,6 +6,16 @@ class FlowerController extends GetxController {
   RxBool valuee = false.obs;
   RxInt values = 0.obs;
   RxInt material = 0.obs;
+  RxInt caliber = 0.obs;
+  RxInt size = 0.obs;
+  RxInt outIn = 0.obs;
+  RxInt flavor = 0.obs;
+  RxInt flavor1 = 0.obs;
+  RxBool flavorr = false.obs;
+  RxBool flavorr1 = false.obs;
+
+  RxInt yesNo = 0.obs;
+  RxInt yesNo2 = 0.obs;
 
   void add() {
     if (values.value < 10) {
@@ -30,8 +40,69 @@ class FlowerController extends GetxController {
     update();
   }
 
+  void setflavor() {
+    flavorr.value = true;
+  }
+
+  void setflavor1() {
+    flavorr1.value = true;
+  }
+
   void materialToggle(int ind) {
     material.value = ind;
     update();
+  }
+
+  void outInToggle(int ind) {
+    outIn.value = ind;
+    update();
+  }
+
+  void sizeToggle(int ind) {
+    size.value = ind;
+    update();
+  }
+
+  void caliberToggle(int ind) {
+    caliber.value = ind;
+    update();
+  }
+
+  void flavorToggle(int ind) {
+    flavor.value = ind;
+    update();
+  }
+
+  void flavor1Toggle(int ind) {
+    flavor1.value = ind;
+    update();
+  }
+
+  void yesNoToggle(int ind) {
+    yesNo.value = ind;
+    update();
+  }
+
+  setNo() {
+    yesNo.value = 1;
+    update();
+  }
+
+  void yesNoToggle2(int ind) {
+    yesNo2.value = ind;
+    update();
+  }
+
+  setNo2() {
+    yesNo2.value = 1;
+    update();
+  }
+
+  @override
+  void onInit() {
+    yesNo.value = 1;
+    yesNo2.value = 1;
+
+    super.onInit();
   }
 }

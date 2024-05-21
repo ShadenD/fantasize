@@ -6,18 +6,18 @@ import 'package:fantasize/view/widget/ColorSelectionWidget.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/questionItem.dart';
 import 'package:fantasize/view/widget/yesNo.dart';
-import 'package:fantasize/view/widget/yesNoColor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class flowers_Item extends StatelessWidget {
-  flowers_Item({super.key});
+class Cake_Item extends StatelessWidget {
+  Cake_Item({super.key});
   final FlowerController flowerController = Get.put(FlowerController());
   String dollar_sign = '\$';
   List flower_data = <flower_information>[
-    const flower_information(imageUrl: 'assets/images/Painting.png'),
-    const flower_information(imageUrl: 'assets/images/Painting(33).png'),
-    const flower_information(imageUrl: 'assets/images/Painting 44 (2).png'),
+    const flower_information(imageUrl: 'assets/images/cake1.png'),
+    const flower_information(imageUrl: 'assets/images/cake2.png'),
+    const flower_information(imageUrl: 'assets/images/cake3.png'),
+    const flower_information(imageUrl: 'assets/images/cake4.png'),
   ];
 
   @override
@@ -87,7 +87,7 @@ class flowers_Item extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.33,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: 4,
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Container(
@@ -112,8 +112,8 @@ class flowers_Item extends StatelessWidget {
                       } else {
                         return Container(
                           margin: const EdgeInsets.all(8.0),
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          width: MediaQuery.of(context).size.width * 0.6,
+                          height: MediaQuery.of(context).size.height * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.60,
                           // color: Colors.red,
                           alignment: Alignment.center,
                           child: Image.asset(flower_data[index].imageUrl),
@@ -123,46 +123,57 @@ class flowers_Item extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.fromLTRB(20, 20, 70, 2),
+                  margin: const EdgeInsets.fromLTRB(0, 20, 100, 2),
                   child: const Text(
-                    'Roze Flower , Baby Roze',
-                    style: TextStyle(fontSize: 25),
+                    'Mini - Cake Super Cake',
+                    style: TextStyle(fontSize: 24),
                   ),
                 ),
-                const Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text('5.0'),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '(7.932 reviews)',
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ],
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15, 0, 70, 2),
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        '5.0',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        '(7.932 reviews)',
+                        style: TextStyle(color: Colors.blue, fontSize: 12),
+                      )
+                    ],
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.fromLTRB(10, 10, 0, 0),
@@ -241,9 +252,11 @@ class flowers_Item extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Material: Natural Roze?',
+                GetBuilder<FlowerController>(
+                  builder: (controller) => const QuestionItemDetails(
+                    imageUrl: 'assets/images/black.png',
+                    question: 'Type of the cake',
+                  ),
                 ),
                 GetBuilder<FlowerController>(
                   builder: (controller) => Container(
@@ -287,7 +300,7 @@ class flowers_Item extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(30),
                                     ),
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 10,
+                                        vertical: 5,
                                         horizontal:
                                             30), // Adjust padding as needed
                                   ),
@@ -298,9 +311,100 @@ class flowers_Item extends StatelessWidget {
                         }),
                   ),
                 ),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black1.png',
-                  question: 'Gender: Female , Male',
+                GetBuilder<FlowerController>(
+                  builder: (controller) => Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/black.png',
+                        width: MediaQuery.of(context).size.width * 0.09,
+                        height: 10,
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 0),
+                          child: Theme(
+                            data: ThemeData(
+                              dividerColor: Colors.transparent,
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                            ),
+                            child: ExpansionTile(
+                              tilePadding: EdgeInsets.zero,
+                              backgroundColor: Colors.transparent,
+                              collapsedBackgroundColor: Colors.transparent,
+                              childrenPadding: EdgeInsets.zero,
+                              initiallyExpanded: false,
+                              title: controller.flavorr.value
+                                  ? Text(
+                                      'Cake flavor:${flavor1[controller.flavor.value]}',
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    )
+                                  : Text(
+                                      'Cake flavor:${flavor2[controller.flavor1.value]}',
+                                      style: const TextStyle(
+                                        fontSize: 12,
+                                      ),
+                                    ),
+                              children: [
+                                GetBuilder<FlowerController>(
+                                  builder: (controller) => Container(
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 40, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        0.06,
+                                    child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        itemExtent: 80,
+                                        shrinkWrap: false,
+                                        itemCount: flavor1.length,
+                                        itemBuilder: (context, index) {
+                                          return Column(
+                                            children: [
+                                              Row(children: [
+                                                InkWell(
+                                                  onTap: () {
+                                                    controller.setflavor();
+                                                    controller
+                                                        .flavorToggle(index);
+                                                  },
+                                                  child: Text(
+                                                    flavor1[index],
+                                                    style: const TextStyle(
+                                                        color: Color.fromARGB(
+                                                            255, 77, 73, 73)),
+                                                  ),
+                                                )
+                                              ]),
+                                              Row(children: [
+                                                InkWell(
+                                                  onTap: () {
+                                                    controller.setflavor1();
+                                                    controller
+                                                        .flavor1Toggle(index);
+                                                  },
+                                                  child: Text(flavor2[index],
+                                                      style: const TextStyle(
+                                                          color: Color.fromARGB(
+                                                              255,
+                                                              77,
+                                                              73,
+                                                              73))),
+                                                )
+                                              ])
+                                            ],
+                                          );
+                                        }),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
                 ),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
@@ -308,33 +412,29 @@ class flowers_Item extends StatelessWidget {
                 ),
                 const YesNoWidget(),
                 const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Color?',
+                  imageUrl: 'assets/images/black3.png',
+                  question: 'Item No.: 1245',
                 ),
-                const SizedBox(height: 0),
+                const SizedBox(height: 10),
+                Container(
+                  margin: const EdgeInsets.fromLTRB(0, 0, 330, 0),
+                  child: const Text(
+                    'Color',
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ),
+                const SizedBox(height: 10),
                 ColorSelectionWidget(),
                 ColorSelectionLess(),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Cover?',
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const YesNoColor(),
                 Container(
                   // color: Colors.red,
-                  margin: const EdgeInsets.only(right: 300),
+                  margin: const EdgeInsets.only(right: 60, top: 20),
                   child: const Text(
                     '3 in stock',
                     style: TextStyle(
                         fontSize: 14,
                         color: Color.fromARGB(255, 142, 142, 142)),
                   ),
-                ),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black3.png',
-                  question: 'Item No.: 1245',
                 ),
               ],
             ),
@@ -384,9 +484,7 @@ class flowers_Item extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14)),
                     padding: const EdgeInsets.symmetric(vertical: 13),
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                     color: const Color.fromARGB(255, 252, 76, 92),
                     textColor: Colors.white,
                     child: const Text('Add to Cart',
@@ -404,7 +502,12 @@ class flowers_Item extends StatelessWidget {
 }
 
 List texts = [
-  'Artificial Roze',
-  'Natural Roze',
+  'Chocolate cake',
+  'White cake',
 ];
 List boolValue = ['Yes', 'No'];
+List flavor1 = ['coffe', 'Carrot', 'Blueberry', 'Fruit'];
+List flavor2 = ['Lotus', 'Nutella', 'Pistachio', 'Oreo'];
+
+List size = ['16', '17', '18', '19'];
+List outIn = ['Outer', 'Inner'];

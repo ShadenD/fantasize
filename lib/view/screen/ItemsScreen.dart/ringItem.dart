@@ -2,22 +2,21 @@
 
 import 'package:fantasize/controller/flowerController.dart';
 import 'package:fantasize/models/flower_info.dart';
-import 'package:fantasize/view/widget/ColorSelectionWidget.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/questionItem.dart';
 import 'package:fantasize/view/widget/yesNo.dart';
-import 'package:fantasize/view/widget/yesNoColor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class flowers_Item extends StatelessWidget {
-  flowers_Item({super.key});
+class Rings_Item extends StatelessWidget {
+  Rings_Item({super.key});
   final FlowerController flowerController = Get.put(FlowerController());
   String dollar_sign = '\$';
   List flower_data = <flower_information>[
-    const flower_information(imageUrl: 'assets/images/Painting.png'),
-    const flower_information(imageUrl: 'assets/images/Painting(33).png'),
-    const flower_information(imageUrl: 'assets/images/Painting 44 (2).png'),
+    const flower_information(imageUrl: 'assets/images/Painting (1).png'),
+    const flower_information(imageUrl: 'assets/images/Painting (1)1121.png'),
+    const flower_information(imageUrl: 'assets/images/Painting (2)112.png'),
+    const flower_information(imageUrl: 'assets/images/Group 4442.png'),
   ];
 
   @override
@@ -87,7 +86,7 @@ class flowers_Item extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.33,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: 4,
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Container(
@@ -112,8 +111,8 @@ class flowers_Item extends StatelessWidget {
                       } else {
                         return Container(
                           margin: const EdgeInsets.all(8.0),
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          width: MediaQuery.of(context).size.width * 0.6,
+                          height: MediaQuery.of(context).size.height * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.65,
                           // color: Colors.red,
                           alignment: Alignment.center,
                           child: Image.asset(flower_data[index].imageUrl),
@@ -125,44 +124,55 @@ class flowers_Item extends StatelessWidget {
                 Container(
                   margin: const EdgeInsets.fromLTRB(20, 20, 70, 2),
                   child: const Text(
-                    'Roze Flower , Baby Roze',
-                    style: TextStyle(fontSize: 25),
+                    'PLATED  BAND RING GOLD',
+                    style: TextStyle(fontSize: 24),
                   ),
                 ),
-                const Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text('5.0'),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '(7.932 reviews)',
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ],
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15, 0, 70, 2),
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        '5.0',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        '(7.932 reviews)',
+                        style: TextStyle(color: Colors.blue, fontSize: 12),
+                      )
+                    ],
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.fromLTRB(10, 10, 0, 0),
@@ -241,9 +251,13 @@ class flowers_Item extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Material: Natural Roze?',
+                GetBuilder<FlowerController>(
+                  builder: (controller) => QuestionItemDetails(
+                    imageUrl: 'assets/images/black.png',
+                    question: controller.material == 0
+                        ? 'Material: Gold'
+                        : 'Material: Silver',
+                  ),
                 ),
                 GetBuilder<FlowerController>(
                   builder: (controller) => Container(
@@ -251,7 +265,7 @@ class flowers_Item extends StatelessWidget {
                     height: MediaQuery.of(context).size.height * 0.07,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemExtent: 160,
+                        itemExtent: 140,
                         shrinkWrap: false,
                         itemCount: texts.length,
                         itemBuilder: (context, index) {
@@ -287,15 +301,123 @@ class flowers_Item extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(30),
                                     ),
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 10,
+                                        vertical: 5,
                                         horizontal:
-                                            30), // Adjust padding as needed
+                                            50), // Adjust padding as needed
                                   ),
                                 ),
                               ),
                             ],
                           );
                         }),
+                  ),
+                ),
+                GetBuilder<FlowerController>(
+                  builder: (controller) => Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/black.png',
+                        width: MediaQuery.of(context).size.width * 0.09,
+                        height: 10,
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 0),
+                          child: Theme(
+                            data: ThemeData(
+                              dividerColor: Colors.transparent,
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                            ),
+                            child: ExpansionTile(
+                              tilePadding: EdgeInsets.zero,
+                              backgroundColor: Colors.transparent,
+                              collapsedBackgroundColor: Colors.transparent,
+                              childrenPadding: EdgeInsets.zero,
+                              initiallyExpanded: false,
+                              title: const Text(
+                                'Caliber',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                              children: [
+                                GetBuilder<FlowerController>(
+                                  builder: (controller) => Container(
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 40, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        0.06,
+                                    child: ListView.builder(
+                                        scrollDirection: Axis.horizontal,
+                                        itemExtent: 80,
+                                        shrinkWrap: false,
+                                        itemCount: caliber.length,
+                                        itemBuilder: (context, index) {
+                                          return Row(
+                                            children: [
+                                              Theme(
+                                                data: ThemeData(
+                                                  dividerColor:
+                                                      Colors.transparent,
+                                                  splashColor:
+                                                      Colors.transparent,
+                                                  highlightColor:
+                                                      Colors.transparent,
+                                                ),
+                                                child: ElevatedButton(
+                                                  autofocus: true,
+                                                  onPressed: () {
+                                                    print(index);
+                                                    controller
+                                                        .caliberToggle(index);
+                                                    print(
+                                                        '${controller.caliber}');
+                                                  },
+                                                  child: Text(
+                                                    caliber[index],
+                                                    style: TextStyle(
+                                                        color: controller
+                                                                    .caliber ==
+                                                                index
+                                                            ? Colors.white
+                                                            : Colors.black,
+                                                        fontSize: 14),
+                                                  ),
+                                                  style:
+                                                      ElevatedButton.styleFrom(
+                                                    backgroundColor: controller
+                                                                .caliber ==
+                                                            index
+                                                        ? const Color.fromARGB(
+                                                            255, 252, 76, 92)
+                                                        : const Color.fromARGB(
+                                                            255, 245, 119, 129),
+                                                    shape:
+                                                        RoundedRectangleBorder(
+                                                      borderRadius:
+                                                          BorderRadius.circular(
+                                                              30),
+                                                    ),
+                                                    padding: const EdgeInsets
+                                                        .symmetric(
+                                                        vertical: 10,
+                                                        horizontal:
+                                                            30), // Adjust padding as needed
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          );
+                                        }),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
                 ),
                 const QuestionItemDetails(
@@ -309,22 +431,115 @@ class flowers_Item extends StatelessWidget {
                 const YesNoWidget(),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
-                  question: 'Color?',
+                  question: 'Size',
                 ),
-                const SizedBox(height: 0),
-                ColorSelectionWidget(),
-                ColorSelectionLess(),
+                GetBuilder<FlowerController>(
+                  builder: (controller) => Container(
+                    margin: const EdgeInsets.fromLTRB(10, 0, 20, 0),
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemExtent: 85,
+                        shrinkWrap: false,
+                        itemCount: size.length,
+                        itemBuilder: (context, index) {
+                          return Row(
+                            children: [
+                              Theme(
+                                data: ThemeData(
+                                  dividerColor: Colors.transparent,
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                ),
+                                child: ElevatedButton(
+                                  autofocus: true,
+                                  onPressed: () {
+                                    controller.sizeToggle(index);
+                                    print('${controller.size}');
+                                  },
+                                  child: Text(
+                                    size[index],
+                                    style: TextStyle(
+                                        color: controller.size == index
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 14),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: controller.size == index
+                                        ? const Color.fromARGB(255, 252, 76, 92)
+                                        : const Color.fromARGB(
+                                            255, 245, 119, 129),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 30),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }),
+                  ),
+                ),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
-                  question: 'Cover?',
+                  question: 'Metal engraving',
                 ),
-                const SizedBox(
-                  height: 10,
+                GetBuilder<FlowerController>(
+                  builder: (controller) => Container(
+                    margin: const EdgeInsets.fromLTRB(10, 0, 20, 0),
+                    height: MediaQuery.of(context).size.height * 0.07,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemExtent: 100,
+                        shrinkWrap: false,
+                        itemCount: outIn.length,
+                        itemBuilder: (context, index) {
+                          return Row(
+                            children: [
+                              Theme(
+                                data: ThemeData(
+                                  dividerColor: Colors.transparent,
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                ),
+                                child: ElevatedButton(
+                                  autofocus: true,
+                                  onPressed: () {
+                                    controller.outInToggle(index);
+                                    print('${controller.outIn}');
+                                  },
+                                  child: Text(
+                                    outIn[index],
+                                    style: TextStyle(
+                                        color: controller.outIn == index
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 14),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: controller.outIn == index
+                                        ? const Color.fromARGB(255, 252, 76, 92)
+                                        : const Color.fromARGB(
+                                            255, 245, 119, 129),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 30),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }),
+                  ),
                 ),
-                const YesNoColor(),
                 Container(
                   // color: Colors.red,
-                  margin: const EdgeInsets.only(right: 300),
+                  margin: const EdgeInsets.only(right: 60, top: 20),
                   child: const Text(
                     '3 in stock',
                     style: TextStyle(
@@ -384,9 +599,7 @@ class flowers_Item extends StatelessWidget {
                     shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(14)),
                     padding: const EdgeInsets.symmetric(vertical: 13),
-                    onPressed: () {
-                      
-                    },
+                    onPressed: () {},
                     color: const Color.fromARGB(255, 252, 76, 92),
                     textColor: Colors.white,
                     child: const Text('Add to Cart',
@@ -404,7 +617,10 @@ class flowers_Item extends StatelessWidget {
 }
 
 List texts = [
-  'Artificial Roze',
-  'Natural Roze',
+  'Gold',
+  'Silver',
 ];
 List boolValue = ['Yes', 'No'];
+List caliber = ['24', '21', '18', '14'];
+List size = ['16', '17', '18', '19'];
+List outIn = ['Outer', 'Inner'];

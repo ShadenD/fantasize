@@ -5,9 +5,13 @@ import 'package:flutter/material.dart';
 class textfield extends StatelessWidget {
   final String title;
   final double width;
-    final double left1;
+  final double left1;
 
-  const textfield({super.key, required this.title, required this.width, required this.left1});
+  const textfield(
+      {super.key,
+      required this.title,
+      required this.width,
+      required this.left1});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +21,7 @@ class textfield extends StatelessWidget {
             // color: Colors.red,
             width: width,
             height: 28,
-            margin:  EdgeInsets.fromLTRB(left1, 20, 200, 10),
+            margin: EdgeInsets.fromLTRB(left1, 20, 200, 10),
             child: Text(
               title,
               style: const TextStyle(fontSize: 20),

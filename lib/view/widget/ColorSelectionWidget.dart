@@ -12,11 +12,6 @@ class ColorSelectionWidget extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.center,
       children: [
-        const Text(
-          'Select Color:',
-          style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
-        ),
-        const SizedBox(height: 10),
         Obx(() {
           return Row(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -25,9 +20,9 @@ class ColorSelectionWidget extends StatelessWidget {
                 GestureDetector(
                   onTap: () => colorController.selectColor(color),
                   child: Container(
-                    width: 50,
-                    height: 50,
-                    margin: const EdgeInsets.only(right: 5, left: 10),
+                    width: 20,
+                    height: 30,
+                    margin: const EdgeInsets.only(right: 0, left: 10),
                     decoration: BoxDecoration(
                       color: color,
                       shape: BoxShape.circle,
@@ -51,5 +46,52 @@ class ColorSelectionWidget extends StatelessWidget {
     Colors.yellow,
     Colors.purple,
     Colors.orange,
+    Colors.grey,
+    Colors.pink,
+    const Color.fromARGB(255, 252, 76, 92),
+    Colors.purple,
   ];
 }
+
+class ColorSelectionLess extends StatelessWidget {
+  final ColorController colorController = Get.put(ColorController());
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Obx(() {
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              for (var color in colorss)
+                GestureDetector(
+                  onTap: () => colorController.selectColor(color),
+                  child: Container(
+                    width: 20,
+                    height: 30,
+                    margin: const EdgeInsets.only(right: 0, left: 10),
+                    decoration: BoxDecoration(
+                      color: color,
+                      shape: BoxShape.circle,
+                      border: colorController.selectedColor.value == color
+                          ? Border.all(color: Colors.black, width: 2)
+                          : null,
+                    ),
+                  ),
+                ),
+            ],
+          );
+        }),
+      ],
+    );
+  }
+}
+
+final List<Color> colorss = [
+  Colors.amber,
+  Colors.purpleAccent,
+  Colors.limeAccent,
+  Colors.lightBlue,
+];
