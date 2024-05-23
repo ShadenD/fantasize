@@ -1,24 +1,27 @@
 // ignore_for_file: camel_case_types, file_names, non_constant_identifier_names, must_be_immutable, avoid_print, sort_child_properties_last, unrelated_type_equality_checks
 
+import 'dart:io';
+
 import 'package:fantasize/controller/flowerController.dart';
+import 'package:fantasize/controller/t_shirt_controller.dart';
 import 'package:fantasize/models/flower_info.dart';
 import 'package:fantasize/view/widget/ColorSelectionWidget.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/bottomnavigatCart.dart';
 import 'package:fantasize/view/widget/questionItem.dart';
 import 'package:fantasize/view/widget/yesNo.dart';
-import 'package:fantasize/view/widget/yesNoColor.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class flowers_Item extends StatelessWidget {
-  flowers_Item({super.key});
-  final FlowerController flowerController = Get.put(FlowerController());
+class Tshirt_Item extends StatelessWidget {
+  Tshirt_Item({super.key});
+  final T_shirt_controller t_shirt_controller = Get.put(T_shirt_controller());
   String dollar_sign = '\$';
   List flower_data = <flower_information>[
-    const flower_information(imageUrl: 'assets/images/Painting.png'),
-    const flower_information(imageUrl: 'assets/images/Painting(33).png'),
-    const flower_information(imageUrl: 'assets/images/Painting 44 (2).png'),
+    const flower_information(imageUrl: 'assets/images/t-shirt.png'),
+    const flower_information(imageUrl: 'assets/images/t-shirt1.png'),
+    const flower_information(imageUrl: 'assets/images/t-shirt2.png'),
+    const flower_information(imageUrl: 'assets/images/t-shirt3.png'),
   ];
 
   @override
@@ -88,7 +91,7 @@ class flowers_Item extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.33,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: 4,
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Container(
@@ -99,22 +102,12 @@ class flowers_Item extends StatelessWidget {
                             alignment: Alignment.center,
                             child: Stack(children: [
                               Image.asset(flower_data[index].imageUrl),
-                              Container(
-                                  margin:
-                                      const EdgeInsets.fromLTRB(90, 80, 20, 20),
-                                  alignment: Alignment.center,
-                                  width:
-                                      MediaQuery.of(context).size.width * 0.1,
-                                  height:
-                                      MediaQuery.of(context).size.height * 0.1,
-                                  child: Image.asset(
-                                      'assets/images/Group 56.png')),
                             ]));
                       } else {
                         return Container(
                           margin: const EdgeInsets.all(8.0),
-                          height: MediaQuery.of(context).size.height * 0.3,
-                          width: MediaQuery.of(context).size.width * 0.6,
+                          height: MediaQuery.of(context).size.height * 0.2,
+                          width: MediaQuery.of(context).size.width * 0.62,
                           // color: Colors.red,
                           alignment: Alignment.center,
                           child: Image.asset(flower_data[index].imageUrl),
@@ -124,46 +117,57 @@ class flowers_Item extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.fromLTRB(20, 20, 70, 2),
+                  margin: const EdgeInsets.fromLTRB(0, 20, 70, 2),
                   child: const Text(
-                    'Roze Flower , Baby Roze',
-                    style: TextStyle(fontSize: 25),
+                    'Hoodies Printing Love',
+                    style: TextStyle(fontSize: 26),
                   ),
                 ),
-                const Row(
-                  children: [
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    Icon(
-                      Icons.star,
-                      color: Colors.yellow,
-                    ),
-                    SizedBox(
-                      width: 20,
-                    ),
-                    Text('5.0'),
-                    SizedBox(
-                      width: 10,
-                    ),
-                    Text(
-                      '(7.932 reviews)',
-                      style: TextStyle(color: Colors.blue),
-                    )
-                  ],
+                Container(
+                  margin: const EdgeInsets.fromLTRB(15, 0, 70, 2),
+                  child: const Row(
+                    children: [
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      Icon(
+                        Icons.star,
+                        color: Colors.yellow,
+                        size: 15,
+                      ),
+                      SizedBox(
+                        width: 20,
+                      ),
+                      Text(
+                        '5.0',
+                        style: TextStyle(fontSize: 12),
+                      ),
+                      SizedBox(
+                        width: 10,
+                      ),
+                      Text(
+                        '(7.932 reviews)',
+                        style: TextStyle(color: Colors.blue, fontSize: 12),
+                      )
+                    ],
+                  ),
                 ),
                 Container(
                   margin: const EdgeInsets.fromLTRB(10, 10, 0, 0),
@@ -173,7 +177,7 @@ class flowers_Item extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 10,
                 ),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
@@ -244,17 +248,17 @@ class flowers_Item extends StatelessWidget {
                 ),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
-                  question: 'Material: Natural Roze?',
+                  question: 'Size',
                 ),
-                GetBuilder<FlowerController>(
+                GetBuilder<T_shirt_controller>(
                   builder: (controller) => Container(
                     margin: const EdgeInsets.fromLTRB(10, 0, 20, 0),
                     height: MediaQuery.of(context).size.height * 0.07,
                     child: ListView.builder(
                         scrollDirection: Axis.horizontal,
-                        itemExtent: 160,
+                        itemExtent: 80,
                         shrinkWrap: false,
-                        itemCount: texts.length,
+                        itemCount: size.length,
                         itemBuilder: (context, index) {
                           return Row(
                             children: [
@@ -267,19 +271,158 @@ class flowers_Item extends StatelessWidget {
                                 child: ElevatedButton(
                                   autofocus: true,
                                   onPressed: () {
-                                    controller.materialToggle(index);
-                                    print('${controller.material}');
+                                    controller.tshirtToggle(index);
+                                    print('${controller.tshirt}');
                                   },
                                   child: Text(
-                                    texts[index],
+                                    size[index],
                                     style: TextStyle(
-                                        color: controller.material == index
+                                        color: controller.tshirt == index
                                             ? Colors.white
                                             : Colors.black,
                                         fontSize: 14),
                                   ),
                                   style: ElevatedButton.styleFrom(
-                                    backgroundColor: controller.material ==
+                                    backgroundColor: controller.tshirt == index
+                                        ? const Color.fromARGB(255, 252, 76, 92)
+                                        : const Color.fromARGB(
+                                            255, 245, 119, 129),
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius: BorderRadius.circular(30),
+                                    ),
+                                    padding: const EdgeInsets.symmetric(
+                                        vertical: 10, horizontal: 30),
+                                  ),
+                                ),
+                              ),
+                            ],
+                          );
+                        }),
+                  ),
+                ),
+                GetBuilder<T_shirt_controller>(
+                  builder: (controller) => Theme(
+                    data: ThemeData(
+                      dividerColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(22),
+                            ),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.88,
+                              height: MediaQuery.of(context).size.height * 0.4,
+                              padding: const EdgeInsets.all(20),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Add Your Design',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  const Icon(
+                                    Icons.arrow_downward,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
+                                  const SizedBox(height: 20),
+                                  controller.selectedImagePath.value == ''
+                                      ? InkWell(
+                                          onTap: () {
+                                            controller
+                                                .showImageSourceActionSheet(
+                                                    context);
+                                          },
+                                          child: const Icon(
+                                            Icons.add_photo_alternate,
+                                            size: 70,
+                                          ),
+                                        )
+                                      : Image.file(
+                                          File(controller
+                                              .selectedImagePath.value),
+                                          width: 200,
+                                          height: 200,
+                                        )
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: const QuestionItemDetails(
+                        imageUrl: 'assets/images/black.png',
+                        question: 'Attach Desgin+',
+                      ),
+                    ),
+                  ),
+                ),
+                const QuestionItemDetails(
+                  imageUrl: 'assets/images/black.png',
+                  question: 'Attach message',
+                ),
+                const YesNoWidget(),
+                const SizedBox(
+                  height: 10,
+                ),
+                const QuestionItemDetails(
+                  imageUrl: 'assets/images/black3.png',
+                  question: 'Item No.: 1245',
+                ),
+                const SizedBox(
+                  height: 10,
+                ),
+                const QuestionItemDetails(
+                  imageUrl: 'assets/images/black.png',
+                  question: 'Printing type',
+                ),
+                GetBuilder<T_shirt_controller>(
+                  builder: (controller) => Container(
+                    // color: Colors.red,
+                    margin: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+                    height: MediaQuery.of(context).size.height * 0.06,
+                    width: MediaQuery.of(context).size.width * 2,
+                    child: ListView.builder(
+                        scrollDirection: Axis.horizontal,
+                        itemExtent: 140,
+                        shrinkWrap: false,
+                        itemCount: printing.length,
+                        itemBuilder: (context, index) {
+                          return Row(
+                            children: [
+                              Theme(
+                                data: ThemeData(
+                                  dividerColor: Colors.transparent,
+                                  splashColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
+                                ),
+                                child: ElevatedButton(
+                                  autofocus: true,
+                                  onPressed: () {
+                                    controller.printingToggle(index);
+                                    print('${controller.printing}');
+                                  },
+                                  child: Text(
+                                    printing[index],
+                                    style: TextStyle(
+                                        color: controller.printing == index
+                                            ? Colors.white
+                                            : Colors.black,
+                                        fontSize: 14),
+                                  ),
+                                  style: ElevatedButton.styleFrom(
+                                    backgroundColor: controller.printing ==
                                             index
                                         ? const Color.fromARGB(255, 252, 76, 92)
                                         : const Color.fromARGB(
@@ -288,9 +431,7 @@ class flowers_Item extends StatelessWidget {
                                       borderRadius: BorderRadius.circular(30),
                                     ),
                                     padding: const EdgeInsets.symmetric(
-                                        vertical: 10,
-                                        horizontal:
-                                            30), // Adjust padding as needed
+                                        vertical: 10, horizontal: 35),
                                   ),
                                 ),
                               ),
@@ -300,47 +441,12 @@ class flowers_Item extends StatelessWidget {
                   ),
                 ),
                 const QuestionItemDetails(
-                  imageUrl: 'assets/images/black1.png',
-                  question: 'Gender: Female , Male',
-                ),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Attach  Message?',
-                ),
-                const YesNoWidget(),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Color?',
-                ),     const YesNoWidget(),
-                const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
                   question: 'Color?',
                 ),
                 const SizedBox(height: 0),
                 ColorSelectionWidget(),
                 ColorSelectionLess(),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black.png',
-                  question: 'Cover?',
-                ),
-                const SizedBox(
-                  height: 10,
-                ),
-                const YesNoColor(),
-                Container(
-                  // color: Colors.red,
-                  margin: const EdgeInsets.only(right: 300),
-                  child: const Text(
-                    '3 in stock',
-                    style: TextStyle(
-                        fontSize: 14,
-                        color: Color.fromARGB(255, 142, 142, 142)),
-                  ),
-                ),
-                const QuestionItemDetails(
-                  imageUrl: 'assets/images/black3.png',
-                  question: 'Item No.: 1245',
-                ),
               ],
             ),
           ))
@@ -352,7 +458,10 @@ class flowers_Item extends StatelessWidget {
 }
 
 List texts = [
-  'Artificial Roze',
-  'Natural Roze',
+  'Gold',
+  'Silver',
 ];
 List boolValue = ['Yes', 'No'];
+List caliber = ['24', '21', '18', '14'];
+List size = ['S', 'M', 'L', 'XL'];
+List printing = ['Printing', 'Stretching'];

@@ -2,11 +2,9 @@
 
 import 'package:fantasize/routes.dart';
 import 'package:fantasize/services/services.dart';
-import 'package:fantasize/view/screen/ItemsScreen.dart/ringItem.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/frameworkItem.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
-import 'view/screen/ItemsScreen.dart/cakeItem.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +28,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(headline1: const TextStyle(fontFamily: 'Poppins'))),
-      home:  Cake_Item(),
+      home: Framework_Item(),
       getPages: routes,
     );
   }

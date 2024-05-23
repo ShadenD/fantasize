@@ -4,6 +4,7 @@ import 'package:fantasize/controller/flowerController.dart';
 import 'package:fantasize/models/flower_info.dart';
 import 'package:fantasize/view/widget/ColorSelectionWidget.dart';
 import 'package:fantasize/view/widget/Logo.dart';
+import 'package:fantasize/view/widget/bottomnavigatCart.dart';
 import 'package:fantasize/view/widget/questionItem.dart';
 import 'package:fantasize/view/widget/yesNo.dart';
 import 'package:flutter/material.dart';
@@ -441,62 +442,7 @@ class Cake_Item extends StatelessWidget {
           ))
         ],
       ),
-      bottomNavigationBar: Container(
-        margin: const EdgeInsets.only(top: 30),
-        // color: Colors.red,
-        height: MediaQuery.of(context).size.height * 0.13,
-        padding: const EdgeInsets.all(0),
-        child: Stack(children: [
-          Image.asset(
-            'assets/images/Rectangle 8.png',
-            width: 300,
-            height: 130,
-            fit: BoxFit.cover,
-          ),
-          Row(
-            children: [
-              Container(
-                margin: const EdgeInsets.fromLTRB(20, 50, 0, 0),
-                child: Row(
-                  children: [
-                    Text(
-                      dollar_sign,
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 27),
-                    ),
-                    const Text('235.00',
-                        style: TextStyle(
-                            fontWeight: FontWeight.bold, fontSize: 27))
-                  ],
-                ),
-              ),
-              const SizedBox(
-                width: 70,
-              ),
-              GetBuilder<FlowerController>(
-                builder: (controller) => Container(
-                  // color: Colors.red,
-                  padding: const EdgeInsets.all(0),
-                  height: MediaQuery.of(context).size.height * 0.055,
-                  width: MediaQuery.of(context).size.width * 0.5,
-                  margin: const EdgeInsets.fromLTRB(0, 50, 0, 0),
-                  child: MaterialButton(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(14)),
-                    padding: const EdgeInsets.symmetric(vertical: 13),
-                    onPressed: () {},
-                    color: const Color.fromARGB(255, 252, 76, 92),
-                    textColor: Colors.white,
-                    child: const Text('Add to Cart',
-                        style: TextStyle(
-                            fontWeight: FontWeight.normal, fontSize: 16)),
-                  ),
-                ),
-              ),
-            ],
-          )
-        ]),
-      ),
+      bottomNavigationBar: BattomNavigatItems(),
     );
   }
 }

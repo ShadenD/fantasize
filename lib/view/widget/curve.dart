@@ -112,7 +112,7 @@ class curve extends StatelessWidget {
             categoriesscreen(),
             const explore(),
             Favorites(),
-            homescreen(),
+            cart(),
           ],
         ),
       ),

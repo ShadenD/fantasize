@@ -13,6 +13,7 @@ class FlowerController extends GetxController {
   RxInt flavor1 = 0.obs;
   RxBool flavorr = false.obs;
   RxBool flavorr1 = false.obs;
+  var cartButton = false.obs;
 
   RxInt yesNo = 0.obs;
   RxInt yesNo2 = 0.obs;
@@ -23,6 +24,11 @@ class FlowerController extends GetxController {
     } else {
       values.value = 0;
     }
+    update();
+  }
+
+  cartToggle() {
+    cartButton.value = !cartButton.value;
     update();
   }
 
@@ -102,6 +108,7 @@ class FlowerController extends GetxController {
   void onInit() {
     yesNo.value = 1;
     yesNo2.value = 1;
+    cartButton.value = false;
 
     super.onInit();
   }
