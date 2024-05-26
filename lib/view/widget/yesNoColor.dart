@@ -12,29 +12,27 @@ class YesNoColor extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetBuilder<FlowerController>(
-      builder: (controller) => Container(
-        // color: Colors.red,
-        margin: controller.yesNo2 == 1
-            ? const EdgeInsets.fromLTRB(10, 0, 20, 0)
-            : const EdgeInsets.fromLTRB(0, 0, 200, 0),
-        width: controller.yesNo2 == 1
-            ? double.infinity
-            : MediaQuery.of(context).size.width * 0.8,
-        height: controller.yesNo2 == 1
-            ? MediaQuery.of(context).size.height * 0.04
-            : MediaQuery.of(context).size.height * 0.2,
-        child: Center(
-          child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemExtent: 90,
-            shrinkWrap: false,
-            itemCount: controller.yesNo2 == 1 ? texts.length : 1,
-            itemBuilder: (context, index) {
-              if (controller.yesNo2 == 0) {
-                return Center(
-                  child: SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Expanded(
+      builder: (controller) => Stack(children: [
+        Container(
+          // color: Colors.red,
+          margin: controller.yesNo2 == 1
+              ? const EdgeInsets.fromLTRB(10, 0, 20, 0)
+              : const EdgeInsets.fromLTRB(0, 0, 200, 0),
+          width: controller.yesNo2 == 1 ? double.infinity : double.infinity,
+          height: controller.yesNo2 == 1
+              ? MediaQuery.of(context).size.height * 0.04
+              : MediaQuery.of(context).size.height * 0.2,
+          child: Center(
+            child: ListView.builder(
+              scrollDirection: Axis.horizontal,
+              itemExtent: 90,
+              shrinkWrap: false,
+              itemCount: controller.yesNo2 == 1 ? texts.length : 1,
+              itemBuilder: (context, index) {
+                if (controller.yesNo2 == 0) {
+                  return Center(
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.vertical,
                       child: Column(
                         children: [
                           ColorSelectionWidget(),
@@ -60,53 +58,56 @@ class YesNoColor extends StatelessWidget {
                         ],
                       ),
                     ),
-                  ),
-                );
-              } else {
-                return Row(
-                  children: [
-                    Theme(
-                      data: ThemeData(
-                        dividerColor: Colors.transparent,
-                        splashColor: Colors.transparent,
-                        highlightColor: Colors.transparent,
-                      ),
-                      child: ElevatedButton(
-                        autofocus: true,
-                        onPressed: () {
-                          controller.yesNoToggle2(index);
-                          print('${controller.yesNo2}');
-                        },
-                        child: Text(
-                          boolValue[index],
-                          style: TextStyle(
-                            color: controller.yesNo2 == index
-                                ? Colors.white
-                                : Colors.black,
-                            fontSize: 12,
+                  );
+                } else {
+                  return SingleChildScrollView(
+                    scrollDirection: Axis.horizontal,
+                    child: Row(
+                      children: [
+                        Theme(
+                          data: ThemeData(
+                            dividerColor: Colors.transparent,
+                            splashColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
+                          ),
+                          child: ElevatedButton(
+                            autofocus: true,
+                            onPressed: () {
+                              controller.yesNoToggle2(index);
+                              print('${controller.yesNo2}');
+                            },
+                            child: Text(
+                              boolValue[index],
+                              style: TextStyle(
+                                color: controller.yesNo2 == index
+                                    ? Colors.white
+                                    : Colors.black,
+                                fontSize: 12,
+                              ),
+                            ),
+                            style: ElevatedButton.styleFrom(
+                              backgroundColor: controller.yesNo2 == index
+                                  ? const Color.fromARGB(255, 252, 76, 92)
+                                  : const Color.fromARGB(255, 245, 119, 129),
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(30),
+                              ),
+                              padding: const EdgeInsets.symmetric(
+                                vertical: 5,
+                                horizontal: 30,
+                              ),
+                            ),
                           ),
                         ),
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: controller.yesNo2 == index
-                              ? const Color.fromARGB(255, 252, 76, 92)
-                              : const Color.fromARGB(255, 245, 119, 129),
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(30),
-                          ),
-                          padding: const EdgeInsets.symmetric(
-                            vertical: 5,
-                            horizontal: 30,
-                          ),
-                        ),
-                      ),
+                      ],
                     ),
-                  ],
-                );
-              }
-            },
+                  );
+                }
+              },
+            ),
           ),
         ),
-      ),
+      ]),
     );
   }
 }

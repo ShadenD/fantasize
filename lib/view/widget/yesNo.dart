@@ -21,7 +21,7 @@ class YesNoWidget extends StatelessWidget {
             : MediaQuery.of(context).size.width * 0.8,
         height: controller.yesNo == 1
             ? MediaQuery.of(context).size.height * 0.04
-            : MediaQuery.of(context).size.height * 0.4,
+            : MediaQuery.of(context).size.height * 0.2,
         child: Center(
           child: ListView.builder(
             scrollDirection: Axis.horizontal,
@@ -38,11 +38,14 @@ class YesNoWidget extends StatelessWidget {
                         style: TextStyle(fontSize: 9),
                       ),
                       Container(
-                        margin: const EdgeInsets.all(10),
-                        width: 200,
-                        height: 100,
+                        margin: const EdgeInsets.fromLTRB(0, 10, 0, 0),
+                        width: double.infinity,
+                        height: 50,
+
+                        // color: Colors.black,
                         child: TextField(
                             decoration: InputDecoration(
+                          filled: true,
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(color: Colors.grey),
                             borderRadius: BorderRadius.circular(10),

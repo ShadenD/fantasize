@@ -2,11 +2,11 @@
 
 import 'dart:io';
 
+import 'package:fantasize/controller/Mugs_controller.dart';
 import 'package:fantasize/controller/flowerController.dart';
 import 'package:fantasize/controller/framePhoto_controller.dart';
 import 'package:fantasize/controller/t_shirt_controller.dart';
 import 'package:fantasize/models/flower_info.dart';
-import 'package:fantasize/models/sizeframe.dart';
 import 'package:fantasize/view/widget/ColorSelectionWidget.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/bottomnavigatCart.dart';
@@ -15,24 +15,23 @@ import 'package:fantasize/view/widget/yesNo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class Framework_Item extends StatelessWidget {
-  Framework_Item({super.key});
+class Mugs_Item extends StatelessWidget {
+  Mugs_Item({super.key});
   final framePhoto_controller fframePhoto_controller =
       Get.put(framePhoto_controller());
   final T_shirt_controller t_shirt_controller = Get.put(T_shirt_controller());
+  final Musgs_controller musgs_controller = Get.put(Musgs_controller());
 
   String dollar_sign = '\$';
   List flower_data = <flower_information>[
-    const flower_information(imageUrl: 'assets/images/Frame1.png'),
-    const flower_information(imageUrl: 'assets/images/Frame2.png'),
-    const flower_information(imageUrl: 'assets/images/Frame3.png'),
-  ];
-  List shape = <FrameSize>[
-    FrameSize(
-        imageUrl: 'assets/images/FFrame4.png', width: 0.08, height: 0.199),
-    FrameSize(imageUrl: 'assets/images/FFrame3.png', width: 0.09, height: 0.19),
-    FrameSize(imageUrl: 'assets/images/FFrame1.png', width: 0.42, height: 0.42),
-    FrameSize(imageUrl: 'assets/images/FFrame2.png', width: 0.42, height: 0.2),
+    const flower_information(
+        imageUrl: 'assets/images/4a1a27a7e94447608798879da28ee6e8 1.png'),
+    const flower_information(
+        imageUrl: 'assets/images/8565bc9cb58d7a20632051dfffac0d5d 1.png'),
+    const flower_information(
+        imageUrl: 'assets/images/24031dfc369d1572d1a7409ee12f4703 1.png'),
+    const flower_information(
+        imageUrl: 'assets/images/e322ae75728dc07162d77876c1d1c65a 1.png'),
   ];
 
   @override
@@ -103,12 +102,12 @@ class Framework_Item extends StatelessWidget {
                   height: MediaQuery.of(context).size.height * 0.33,
                   child: ListView.builder(
                     scrollDirection: Axis.horizontal,
-                    itemCount: 3,
+                    itemCount: 4,
                     itemBuilder: (context, index) {
                       if (index == 0) {
                         return Container(
                             margin: const EdgeInsets.all(8.0),
-                            height: MediaQuery.of(context).size.height * 0.3,
+                            height: MediaQuery.of(context).size.height * 0.1,
                             width: MediaQuery.of(context).size.width * 0.6,
                             // color: Colors.red,
                             alignment: Alignment.center,
@@ -119,7 +118,7 @@ class Framework_Item extends StatelessWidget {
                         return Container(
                           margin: const EdgeInsets.all(8.0),
                           height: MediaQuery.of(context).size.height * 0.2,
-                          width: MediaQuery.of(context).size.width * 0.62,
+                          width: MediaQuery.of(context).size.width * 0.9,
                           // color: Colors.red,
                           alignment: Alignment.center,
                           child: Image.asset(flower_data[index].imageUrl),
@@ -129,10 +128,10 @@ class Framework_Item extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  margin: const EdgeInsets.fromLTRB(20, 20, 40, 2),
+                  margin: const EdgeInsets.fromLTRB(30, 20, 90, 2),
                   child: const Text(
-                    'Frame Photo Printing Love',
-                    style: TextStyle(fontSize: 26),
+                    'Mugs for happy day',
+                    style: TextStyle(fontSize: 30),
                   ),
                 ),
                 Container(
@@ -142,27 +141,27 @@ class Framework_Item extends StatelessWidget {
                       Icon(
                         Icons.star,
                         color: Colors.yellow,
-                        size: 15,
+                        size: 20,
                       ),
                       Icon(
                         Icons.star,
                         color: Colors.yellow,
-                        size: 15,
+                        size: 20,
                       ),
                       Icon(
                         Icons.star,
                         color: Colors.yellow,
-                        size: 15,
+                        size: 20,
                       ),
                       Icon(
                         Icons.star,
                         color: Colors.yellow,
-                        size: 15,
+                        size: 20,
                       ),
                       Icon(
                         Icons.star,
                         color: Colors.yellow,
-                        size: 15,
+                        size: 20,
                       ),
                       SizedBox(
                         width: 20,
@@ -206,9 +205,9 @@ class Framework_Item extends StatelessWidget {
                             child: InkWell(
                               autofocus: true,
                               onTap: () {
-                                // controller.remove();
-                                // print('${controller.values}');
-                                // print('object');
+                                controller.remove();
+                                print('${controller.values}');
+                                print('object');
                               },
                               child: Image.asset(
                                 'assets/images/Buttons (1).png',
@@ -235,10 +234,10 @@ class Framework_Item extends StatelessWidget {
                             child: InkWell(
                               autofocus: true,
                               onTap: () {
-                                // controller.add();
-                                // print('${controller.values}');
+                                controller.add();
+                                print('${controller.values}');
 
-                                // print('object');
+                                print('object');
                               },
                               child: Image.asset(
                                 'assets/images/Buttons.png',
@@ -256,13 +255,13 @@ class Framework_Item extends StatelessWidget {
                 ),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
-                  question: 'Size',
+                  question: 'Design option',
                 ),
-                GetBuilder<framePhoto_controller>(
+                GetBuilder<Musgs_controller>(
                     builder: (controller) => SizedBox(
                           // color: Colors.red,
                           width: MediaQuery.of(context).size.width * 0.99,
-                          height: MediaQuery.of(context).size.height * 0.20,
+                          height: MediaQuery.of(context).size.height * 0.24,
                           child: Row(
                             children: [
                               Theme(
@@ -273,76 +272,24 @@ class Framework_Item extends StatelessWidget {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    // controller.size1Toggle();
+                                    controller.mug1Toggle();
                                   },
                                   child: Column(
                                     children: [
                                       Container(
                                         // color: Colors.black,
                                         margin: const EdgeInsets.fromLTRB(
-                                            0, 70, 0, 5),
+                                            30, 0, 0, 0),
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                0.14,
+                                                0.38,
                                         height:
                                             MediaQuery.of(context).size.height *
-                                                0.08,
+                                                0.18,
                                         child: Image.asset(
-                                            'assets/images/FFrame4.png'),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            color: const Color.fromARGB(
-                                                255, 14, 14, 14),
-                                            width: 1.0,
-                                          ),
+                                          'assets/images/Frame 1171274907.png',
+                                          fit: BoxFit.fill,
                                         ),
-                                        margin: const EdgeInsets.fromLTRB(
-                                            0, 0, 0, 0),
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.03,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.02,
-                                        child: Image.asset(
-                                          'assets/images/Ellipse 118.png',
-                                          color: controller.frame1.value
-                                              ? Colors.red
-                                              : Colors.white,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Theme(
-                                data: ThemeData(
-                                  dividerColor: Colors.transparent,
-                                  splashColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    // controller.size2Toggle();
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        // color: Colors.black,
-                                        margin: const EdgeInsets.fromLTRB(
-                                            0, 38, 0, 5),
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.20,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.12,
-                                        child: Image.asset(
-                                            'assets/images/FFrame3.png'),
                                       ),
                                       Container(
                                         decoration: BoxDecoration(
@@ -356,16 +303,16 @@ class Framework_Item extends StatelessWidget {
                                         ),
                                         // color: Colors.black,
                                         margin: const EdgeInsets.fromLTRB(
-                                            0, 0, 0, 0),
+                                            45, 0, 0, 0),
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                0.03,
+                                                0.04,
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 0.02,
                                         child: Image.asset(
                                           'assets/images/Ellipse 118.png',
-                                          color: controller.frame2.value
+                                          color: controller.mug1.value
                                               ? Colors.red
                                               : Colors.white,
                                         ),
@@ -375,7 +322,7 @@ class Framework_Item extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                width: 3,
+                                width: 30,
                               ),
                               Theme(
                                 data: ThemeData(
@@ -385,22 +332,23 @@ class Framework_Item extends StatelessWidget {
                                 ),
                                 child: InkWell(
                                   onTap: () {
-                                    // controller.size3Toggle();
+                                    controller.mug2Toggle();
                                   },
                                   child: Column(
                                     children: [
                                       Container(
                                         // color: Colors.black,
                                         margin: const EdgeInsets.fromLTRB(
-                                            0, 37, 0, 5),
+                                            0, 0, 0, 0),
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                0.34,
+                                                0.33,
                                         height:
                                             MediaQuery.of(context).size.height *
-                                                0.12,
+                                                0.19,
                                         child: Image.asset(
-                                          'assets/images/FFrame1.png',
+                                          'assets/images/Component 73.png',
+                                          fit: BoxFit.cover,
                                         ),
                                       ),
                                       Container(
@@ -415,71 +363,16 @@ class Framework_Item extends StatelessWidget {
                                         ),
                                         // color: Colors.black,
                                         margin: const EdgeInsets.fromLTRB(
-                                            0, 0, 0, 0),
+                                            0, 0, 10, 0),
                                         width:
                                             MediaQuery.of(context).size.width *
-                                                0.03,
+                                                0.04,
                                         height:
                                             MediaQuery.of(context).size.height *
                                                 0.02,
                                         child: Image.asset(
                                           'assets/images/Ellipse 118.png',
-                                          color: controller.frame3.value
-                                              ? Colors.red
-                                              : Colors.white,
-                                        ),
-                                      )
-                                    ],
-                                  ),
-                                ),
-                              ),
-                              Theme(
-                                data: ThemeData(
-                                  dividerColor: Colors.transparent,
-                                  splashColor: Colors.transparent,
-                                  highlightColor: Colors.transparent,
-                                ),
-                                child: InkWell(
-                                  onTap: () {
-                                    // controller.size4Toggle();
-                                  },
-                                  child: Column(
-                                    children: [
-                                      Container(
-                                        // color: Colors.black,
-                                        margin: const EdgeInsets.fromLTRB(
-                                            0, 5, 0, 5),
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.3,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.16,
-                                        child: Image.asset(
-                                            'assets/images/FFrame2.png'),
-                                      ),
-                                      Container(
-                                        decoration: BoxDecoration(
-                                          color: Colors.red,
-                                          shape: BoxShape.circle,
-                                          border: Border.all(
-                                            color: const Color.fromARGB(
-                                                255, 14, 14, 14),
-                                            width: 1.0,
-                                          ),
-                                        ),
-                                        // color: Colors.black,
-                                        margin: const EdgeInsets.fromLTRB(
-                                            0, 0, 0, 0),
-                                        width:
-                                            MediaQuery.of(context).size.width *
-                                                0.03,
-                                        height:
-                                            MediaQuery.of(context).size.height *
-                                                0.02,
-                                        child: Image.asset(
-                                          'assets/images/Ellipse 118.png',
-                                          color: controller.frame4.value
+                                          color: controller.mug2.value
                                               ? Colors.red
                                               : Colors.white,
                                         ),
@@ -581,6 +474,16 @@ class Framework_Item extends StatelessWidget {
                 const SizedBox(height: 0),
                 ColorSelectionWidget(),
                 ColorSelectionLess(),
+                Container(
+                  // color: Colors.red,
+                  margin: const EdgeInsets.only(right: 60, top: 20),
+                  child: const Text(
+                    '3 in stock',
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Color.fromARGB(255, 142, 142, 142)),
+                  ),
+                ),
               ],
             ),
           ))

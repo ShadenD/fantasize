@@ -54,7 +54,7 @@ class ColorSelectionWidget extends StatelessWidget {
 }
 
 class ColorSelectionLess extends StatelessWidget {
-  final ColorController colorController = Get.put(ColorController());
+  final ColorController colorController2 = Get.put(ColorController());
 
   @override
   Widget build(BuildContext context) {
@@ -67,7 +67,7 @@ class ColorSelectionLess extends StatelessWidget {
             children: [
               for (var color in colorss)
                 GestureDetector(
-                  onTap: () => colorController.selectColor(color),
+                  onTap: () => colorController2.selectColor2(color),
                   child: Container(
                     width: 20,
                     height: 30,
@@ -75,7 +75,7 @@ class ColorSelectionLess extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: color,
                       shape: BoxShape.circle,
-                      border: colorController.selectedColor.value == color
+                      border: colorController2.selectedColor2.value == color
                           ? Border.all(color: Colors.black, width: 2)
                           : null,
                     ),

@@ -1,4 +1,4 @@
-// ignore_for_file: camel_case_types
+// ignore_for_file: camel_case_types, file_names
 
 import 'package:get/get.dart';
 
@@ -44,10 +44,10 @@ class framePhoto_controller extends GetxController {
 
   @override
   void onInit() {
-    frame1.value = false;
-    frame2.value = false;
-    frame3.value = false;
-    frame4.value = false;
+    // frame1.value = false;
+    // frame2.value = false;
+    // frame3.value = false;
+    // frame4.value = false;
     super.onInit();
   }
 }

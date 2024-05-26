@@ -2,7 +2,7 @@
 
 import 'package:fantasize/routes.dart';
 import 'package:fantasize/services/services.dart';
-import 'package:fantasize/view/screen/ItemsScreen.dart/frameworkItem.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/Si.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -22,13 +22,11 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
           dialogTheme: const DialogTheme(
-              backgroundColor: Color.fromARGB(
-                  255, 255, 255, 255) // Change the background color here
-              ),
+              backgroundColor: Color.fromARGB(255, 255, 255, 255)),
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(headline1: const TextStyle(fontFamily: 'Poppins'))),
-      home: Framework_Item(),
+      home: Si_Item(),
       getPages: routes,
     );
   }
