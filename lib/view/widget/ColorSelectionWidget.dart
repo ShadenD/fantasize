@@ -22,7 +22,7 @@ class ColorSelectionWidget extends StatelessWidget {
                   child: Container(
                     width: 20,
                     height: 30,
-                    margin: const EdgeInsets.only(right: 0, left: 10),
+                    margin: const EdgeInsets.only(right: 0, left: 15),
                     decoration: BoxDecoration(
                       color: color,
                       shape: BoxShape.circle,
@@ -71,7 +71,7 @@ class ColorSelectionLess extends StatelessWidget {
                   child: Container(
                     width: 20,
                     height: 30,
-                    margin: const EdgeInsets.only(right: 0, left: 10),
+                    margin: const EdgeInsets.only(right: 0, left: 15),
                     decoration: BoxDecoration(
                       color: color,
                       shape: BoxShape.circle,
