@@ -10,6 +10,7 @@ import 'package:fantasize/view/screen/ItemsScreen.dart/frameworkItem.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/hoodies.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/mixed_item.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/mobile_cover.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/package2.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/packages.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/ringItem.dart';
 import 'package:fantasize/view/screen/ItemsScreen.dart/t_shirtItem.dart';
@@ -60,4 +61,5 @@ List<GetPage<dynamic>>? routes = [
   GetPage(name: AppRoute.Tatreez_Item, page: () => Si_Item()),
   GetPage(name: AppRoute.Mixed_Item, page: () => Mixed_Item()),
   GetPage(name: AppRoute.Package_Item, page: () => Package_Item()),
+  GetPage(name: AppRoute.Package2_Item, page: () => Package2_Item()),
 ];

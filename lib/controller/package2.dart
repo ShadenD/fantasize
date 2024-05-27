@@ -1,27 +1,54 @@
-// ignore_for_file: camel_case_types, file_names
+// ignore_for_file: camel_case_types
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker/image_picker.dart';
 
-class package_controller extends GetxController {
+class package2_Controller extends GetxController {
+  RxInt material = 0.obs;
   RxBool frame1 = false.obs;
   RxBool frame2 = false.obs;
-
   RxBool frame3 = false.obs;
   RxBool widget2 = false.obs;
   RxInt ww = 0.obs;
   var selectedImagePath = ''.obs;
-
   RxBool frame4 = false.obs;
-  // RxBool cardD1 = false.obs;
-  // RxBool cardD2 = false.obs;
   RxInt flavor = 0.obs;
   RxInt flavor1 = 0.obs;
   RxBool flavorr = false.obs;
   RxBool flavorr1 = false.obs;
   RxString card1 = ''.obs;
   RxString card2 = ''.obs;
+  var selectedColor = Colors.black.obs;
+  RxString selectedScarf1 = ''.obs;
+  RxString selectedScarf2 = ''.obs;
+  var selectedColor2 = Colors.black.obs;
+
+  void selectColor(Color color) {
+    selectedColor.value = color;
+    selectedColor2.value = Colors.black;
+    update();
+  }
+
+  void selectColor2(Color color) {
+    selectedColor2.value = color;
+    selectedColor.value = Colors.black;
+    update();
+  }
+
+  void selectScarf1(String image) {
+    selectedScarf1.value = image;
+    selectedScarf2.value = '';
+    update();
+  }
+
+  void selectScarf2(String image) {
+    selectedScarf2.value = image;
+    selectedScarf1.value = '';
+
+    update();
+  }
+
   Future<void> pickImage(ImageSource source) async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: source);
@@ -37,7 +64,7 @@ class package_controller extends GetxController {
     showModalBottomSheet(
       context: context,
       builder: (context) {
-        return GetBuilder<package_controller>(
+        return GetBuilder<package2_Controller>(
             builder: (controller) => SafeArea(
                   child: Wrap(
                     children: [
@@ -70,11 +97,6 @@ class package_controller extends GetxController {
     update();
   }
 
-  // card2Toggle(int inde) {
-  //   card2.value = inde;
-  //   card1.value;
-  //   update();
-  // }
   void card1Toggle(String image) {
     card1.value = image;
     card2.value = '';
@@ -108,46 +130,47 @@ class package_controller extends GetxController {
     update();
   }
 
-  size1Toggle() {
-    frame1.value = !frame1.value;
-    frame2.value = false;
-    frame3.value = false;
-    frame4.value = false;
-    update();
-  }
+  // size1Toggle() {
+  //   frame1.value = !frame1.value;
+  //   frame2.value = false;
+  //   frame3.value = false;
+  //   frame4.value = false;
+  //   update();
+  // }
 
-  size2Toggle() {
-    frame2.value = !frame2.value;
-    frame1.value = false;
-    frame3.value = false;
-    frame4.value = false;
-    update();
-  }
+  // size2Toggle() {
+  //   frame2.value = !frame2.value;
+  //   frame1.value = false;
+  //   frame3.value = false;
+  //   frame4.value = false;
+  //   update();
+  // }
 
-  size3Toggle() {
-    frame3.value = !frame3.value;
-    frame2.value = false;
-    frame1.value = false;
-    frame4.value = false;
-    update();
-  }
+  // size3Toggle() {
+  //   frame3.value = !frame3.value;
+  //   frame2.value = false;
+  //   frame1.value = false;
+  //   frame4.value = false;
+  //   update();
+  // }
 
-  size4Toggle() {
-    frame4.value = !frame4.value;
-    frame2.value = false;
-    frame3.value = false;
-    frame1.value = false;
-    update();
-  }
+  // size4Toggle() {
+  //   frame4.value = !frame4.value;
+  //   frame2.value = false;
+  //   frame3.value = false;
+  //   frame1.value = false;
+  //   update();
+  // }
 
   @override
   void onInit() {
-    // frame1.value = false;
-    // frame2.value = false;
-    // frame3.value = false;
-    // frame4.value = false;
     widget2.value = false;
     ww.value = 10;
     super.onInit();
+  }
+
+  void materialToggle(int ind) {
+    material.value = ind;
+    update();
   }
 }

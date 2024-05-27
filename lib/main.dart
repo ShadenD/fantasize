@@ -2,7 +2,7 @@
 
 import 'package:fantasize/routes.dart';
 import 'package:fantasize/services/services.dart';
-import 'package:fantasize/view/screen/ItemsScreen.dart/packages.dart';
+import 'package:fantasize/view/screen/ItemsScreen.dart/package2.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -26,7 +26,7 @@ class MyApp extends StatelessWidget {
           textTheme: ThemeData.light()
               .textTheme
               .copyWith(headline1: const TextStyle(fontFamily: 'Poppins'))),
-      home: Package_Item(),
+      home: Package2_Item(),
       getPages: routes,
     );
   }

@@ -12,6 +12,7 @@ import 'package:fantasize/view/widget/ColorSelectionWidget.dart';
 import 'package:fantasize/view/widget/Logo.dart';
 import 'package:fantasize/view/widget/bottomnavigatCart.dart';
 import 'package:fantasize/view/widget/questionItem.dart';
+import 'package:fantasize/view/widget/yesNo.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -829,6 +830,277 @@ class Package_Item extends StatelessWidget {
                                     ],
                                   )),
                         )),
+                GetBuilder<package_controller>(
+                  builder: (controller) => Row(
+                    children: [
+                      Image.asset(
+                        'assets/images/black.png',
+                        width: MediaQuery.of(context).size.width * 0.09,
+                        height: 10,
+                      ),
+                      Expanded(
+                        child: Container(
+                          margin: const EdgeInsets.only(top: 0),
+                          child: Theme(
+                            data: ThemeData(
+                              dividerColor: Colors.transparent,
+                              splashColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
+                            ),
+                            child: ExpansionTile(
+                              tilePadding: EdgeInsets.zero,
+                              backgroundColor: Colors.transparent,
+                              collapsedBackgroundColor: Colors.transparent,
+                              childrenPadding: EdgeInsets.zero,
+                              initiallyExpanded: false,
+                              title: const Text(
+                                'Flower Type and Color',
+                                style: TextStyle(
+                                  fontSize: 12,
+                                ),
+                              ),
+                              children: [
+                                GetBuilder<package_controller>(
+                                  builder: (controller) => Container(
+                                    // color: Colors.red,
+                                    margin:
+                                        const EdgeInsets.fromLTRB(0, 0, 0, 0),
+                                    height: MediaQuery.of(context).size.height *
+                                        0.4,
+                                    width:
+                                        MediaQuery.of(context).size.width * 0.9,
+                                    child: ListView.builder(
+                                        scrollDirection: Axis.vertical,
+                                        itemExtent:
+                                            controller.widget2.value ? 60 : 20,
+                                        shrinkWrap: false,
+                                        itemCount: flowercolor.length,
+                                        itemBuilder: (context, index) {
+                                          if (controller.ww.value == index) {
+                                            return Column(
+                                              children: [
+                                                Column(children: [
+                                                  InkWell(
+                                                    onTap: () {
+                                                      controller
+                                                          .toggleWidget(index);
+                                                    },
+                                                    child:
+                                                        SingleChildScrollView(
+                                                      child: controller
+                                                                  .ww.value ==
+                                                              index
+                                                          ? SingleChildScrollView(
+                                                              child:
+                                                                  ExpansionTile(
+                                                                title: Text(
+                                                                  flowercolor[
+                                                                      index],
+                                                                  style: TextStyle(
+                                                                      color: controller.ww.value ==
+                                                                              index
+                                                                          ? Colors
+                                                                              .red
+                                                                          : const Color
+                                                                              .fromARGB(
+                                                                              255,
+                                                                              37,
+                                                                              37,
+                                                                              37),
+                                                                      fontSize:
+                                                                          10),
+                                                                ), // Wrap the string in a Text widget
+                                                                tilePadding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                backgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                collapsedBackgroundColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                childrenPadding:
+                                                                    EdgeInsets
+                                                                        .zero,
+                                                                initiallyExpanded:
+                                                                    false,
+                                                              ),
+                                                            )
+                                                          : Container(
+                                                              width: 260,
+                                                              margin:
+                                                                  const EdgeInsets
+                                                                      .fromLTRB(
+                                                                      0,
+                                                                      0,
+                                                                      180,
+                                                                      0),
+                                                              child: Text(
+                                                                flowercolor[
+                                                                    index],
+                                                                style:
+                                                                    TextStyle(
+                                                                  color: controller
+                                                                              .ww
+                                                                              .value ==
+                                                                          index
+                                                                      ? Colors
+                                                                          .red
+                                                                      : const Color
+                                                                          .fromARGB(
+                                                                          255,
+                                                                          37,
+                                                                          37,
+                                                                          37),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                    ),
+                                                  )
+                                                ]),
+                                              ],
+                                            );
+                                          } else {
+                                            return Column(
+                                              children: [
+                                                Column(children: [
+                                                  InkWell(
+                                                    onTap: () {
+                                                      controller
+                                                          .toggleWidget(index);
+                                                    },
+                                                    child: Container(
+                                                      width: 260,
+                                                      // color: Colors.black,
+                                                      margin: const EdgeInsets
+                                                          .fromLTRB(
+                                                          0, 0, 180, 0),
+                                                      child: Text(
+                                                        flowercolor[index],
+                                                        style: TextStyle(
+                                                            fontSize: 10,
+                                                            color: controller.ww
+                                                                        .value ==
+                                                                    index
+                                                                ? Colors.red
+                                                                : const Color
+                                                                    .fromARGB(
+                                                                    255,
+                                                                    37,
+                                                                    37,
+                                                                    37)),
+                                                      ),
+                                                    ),
+                                                  )
+                                                ]),
+                                              ],
+                                            );
+                                          }
+                                        }),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+                const QuestionItemDetails(
+                  imageUrl: 'assets/images/black.png',
+                  question: 'Mug Color?',
+                ),
+                const SizedBox(height: 0),
+                ColorSelectionWidget(),
+                ColorSelectionLess(),
+                GetBuilder<package_controller>(
+                  builder: (controller) => Theme(
+                    data: ThemeData(
+                      dividerColor: Colors.transparent,
+                      splashColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
+                    ),
+                    child: InkWell(
+                      onTap: () {
+                        showDialog<String>(
+                          context: context,
+                          builder: (BuildContext context) => Dialog(
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(22),
+                            ),
+                            child: Container(
+                              width: MediaQuery.of(context).size.width * 0.88,
+                              height: MediaQuery.of(context).size.height * 0.4,
+                              padding: const EdgeInsets.all(20),
+                              child: Column(
+                                mainAxisSize: MainAxisSize.min,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  const Text(
+                                    'Add Your Design',
+                                    style: TextStyle(
+                                      fontSize: 14,
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  ),
+                                  const SizedBox(height: 20),
+                                  const Icon(
+                                    Icons.arrow_downward,
+                                    size: 40,
+                                    color: Colors.black,
+                                  ),
+                                  const SizedBox(height: 20),
+                                  controller.selectedImagePath.value == ''
+                                      ? InkWell(
+                                          onTap: () {
+                                            controller
+                                                .showImageSourceActionSheet(
+                                                    context);
+                                          },
+                                          child: const Icon(
+                                            Icons.add_photo_alternate,
+                                            size: 70,
+                                          ),
+                                        )
+                                      : Image.file(
+                                          File(controller
+                                              .selectedImagePath.value),
+                                          width: 200,
+                                          height: 200,
+                                        )
+                                ],
+                              ),
+                            ),
+                          ),
+                        );
+                      },
+                      child: const QuestionItemDetails(
+                        imageUrl: 'assets/images/black.png',
+                        question: 'Attach Photo or Desgin +',
+                      ),
+                    ),
+                  ),
+                ),
+                const QuestionItemDetails(
+                  imageUrl: 'assets/images/black.png',
+                  question: 'Attach Message?',
+                ),
+                const YesNoWidget(),
+                const QuestionItemDetails(
+                  imageUrl: 'assets/images/black3.png',
+                  question: 'Item No.: 1245',
+                ),
+                Container(
+                  // color: Colors.red,
+                  margin: const EdgeInsets.only(right: 290, top: 0),
+                  child: const Text(
+                    '3 in stock',
+                    style: TextStyle(
+                      fontSize: 13,
+                    ),
+                  ),
+                ),
               ],
             ),
           ))
@@ -846,3 +1118,11 @@ List candleSmel1 = [
   'Sweet Heart',
 ];
 List candleSmel2 = ['Oud', 'Lavender', 'Orange'];
+List flowercolor = [
+  'Chrysanthemum Spray',
+  'Carnation dianthus',
+  'Roze and Baby Roze',
+  'calla Lily',
+  'Anemone',
+  'Jasmine',
+];

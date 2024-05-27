@@ -39,4 +39,6 @@ class AppRoute {
   static const String Si_Item = "/Si_Item";
   static const String Mixed_Item = "/Si_Item";
   static const String Package_Item = "/Package_Item";
+    static const String Package2_Item = "/Package2_Item";
+
 }
