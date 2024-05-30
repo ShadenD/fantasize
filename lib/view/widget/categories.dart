@@ -15,7 +15,6 @@ class Categories extends StatelessWidget {
     required this.initialColor,
     required this.departments,
     required this.onPressed,
-  
   }) : super(key: key);
 
   @override

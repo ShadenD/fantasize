@@ -25,6 +25,7 @@ class flowers_Item extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        automaticallyImplyLeading: false,
         title: Container(
             margin: const EdgeInsets.fromLTRB(40, 0, 0, 0),
             child: const Logo()),
@@ -311,7 +312,8 @@ class flowers_Item extends StatelessWidget {
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
                   question: 'Color?',
-                ),     const YesNoWidget(),
+                ),
+                const YesNoWidget(),
                 const QuestionItemDetails(
                   imageUrl: 'assets/images/black.png',
                   question: 'Color?',

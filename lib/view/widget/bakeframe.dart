@@ -10,18 +10,16 @@ class Frame extends StatelessWidget {
       onTap: () {
         Get.back();
       },
-      child: ClipRRect(
-        child: Container(
-            // color: Colors.red,
-            width: MediaQuery.of(context).size.width * 0.8,
-            height: MediaQuery.of(context).size.height * 0.2,
-            margin: const EdgeInsets.fromLTRB(10, 10, 6, 0),
-            child: Image.asset(
-              'assets/images/Frame.png',
-              width: MediaQuery.of(context).size.width * 0.8,
-              height: MediaQuery.of(context).size.height * 0.6,
-            )),
-      ),
+      child: Container(
+          // color: Colors.red,
+          width: MediaQuery.of(context).size.width * 0.13,
+          height: MediaQuery.of(context).size.height * 0.07,
+          margin: const EdgeInsets.fromLTRB(7, 0, 6, 0),
+          child: Image.asset(
+            'assets/images/Frame.png',
+            width: MediaQuery.of(context).size.width * 0.1,
+            height: MediaQuery.of(context).size.height * 0.1,
+          )),
     );
   }
 }
